@@ -76,9 +76,9 @@ At the receiver:
 {\large \bf
 At the sender:
 \begin{itemize}
-\item Determine the cumulative number of bytes delivered 100 ms into the future.
-\item Subtract number of bytes already in queue.
-\item Remaining bytes are ``safe" to send.
+\item Use the forecast to determine the cumulative number of packets delivered 100 ms into the future.
+\item Subtract number of packets already in queue.
+\item Remaining number is safe to send.
 \end{itemize}
 }
 
