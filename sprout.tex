@@ -47,7 +47,7 @@ At the receiver:
 \item Maintain a probability distribution over link rates.
 \item Model receiver's arrivals as a Poisson process with a time-varying rate $\lambda$.
 \item Observe number of bytes $k$ that arrived in a tick of duration $\tau$.
-\item Compute the likelihood $L(x)$ that a Poisson process with rate $\lambda$ generated $k$ bytes.
+\item Compute the likelihood $L(x)$ that a Poisson process with rate $x$ delivered $k$ bytes in $\tau$ seconds.
       \begin{equation}
        L(x) = \frac{(x.\tau)^{k}}{k!}exp(-x.\tau)
       \end{equation}
