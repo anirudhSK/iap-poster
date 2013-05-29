@@ -1,0 +1,6 @@
+*.log
+*.aux
+*.pdf
+*.ps
+*.pdf_tex
+*.dvi
