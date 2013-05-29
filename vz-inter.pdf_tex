@@ -50,6 +50,7 @@
   \makeatother%
   \small
   \begin{picture}(1,0.83024842)%
+    {\large
     \put(0,0){\includegraphics[width=\unitlength]{vz-inter.pdf}}%
     \put(0.14587538,0.12071522){\makebox(0,0)[rb]{\smash{0.0001}}}%
     \put(0.14587538,0.23578975){\makebox(0,0)[rb]{\smash{0.001}}}%
@@ -67,5 +68,6 @@
     \put(0.01918618,0.45646839){\rotatebox{90}{\makebox(0,0)[b]{\smash{Percent interarrivals}}}}%
     \put(0.57990649,0.00564069){\makebox(0,0)[b]{\smash{interarrival time (ms)}}}%
     \put(0.87920748,0.75380382){\makebox(0,0)[rb]{\smash{$t^{-3.27}$}}}%
+    }
   \end{picture}%
 \endgroup%

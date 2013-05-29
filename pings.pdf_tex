@@ -44,6 +44,7 @@
   \makeatother
   \scriptsize
   \begin{picture}(1,0.8)%
+    {\large
     \put(0,0){\includegraphics[width=\unitlength]{pings.pdf}}%
     \put(0.106,0.27666667){\makebox(0,0)[rb]{\smash{0.2}}}%
     \put(0.106,0.324){\makebox(0,0)[rb]{\smash{0.3}}}%
@@ -60,5 +61,6 @@
     \put(0.95833333,0.0585){\makebox(0,0)[b]{\smash{250}}}%
     \put(0.02933333,0.434){\rotatebox{90}{\makebox(0,0)[b]{\smash{Round-trip time (s)}}}}%
     \put(0.539,0.0135){\makebox(0,0)[b]{\smash{Time (s)}}}%
+    }
   \end{picture}%
 \endgroup
