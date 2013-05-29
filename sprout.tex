@@ -1,0 +1,73 @@
+\begin{multicols}{2}
+\section*{Problem setting}
+\begin{itemize}
+\item Cellular networks are variable.
+\begin{centering}
+{\small
+\def\svgwidth{\columnwidth}\input{allcapacity.pdf_tex}
+}
+\end{centering}
+\item Cellular networks are too reliable.
+\item Consequently, interactive apps perform poorly because they are reactive
+\end{itemize}
+
+\section*{Sprout's goal}
+\begin{itemize}
+\item Maximize throughput at receiver.
+\item Subject to a bounded risk (at most 5\%) of delay exceeding 100 ms.
+\end{itemize}
+
+\section*{How it works}
+\begin{itemize}
+\item {\textbf Inference:} Infer probability distribution of link speeds from packet arrivals.
+\item {\textbf Prediction:} Predict future link speed.
+\item {\textbf Control:} Send as much as possible, but ensuring a 95 \% probability that all packets are delivered within 100 ms.
+\end{itemize}
+
+\section*{Inference}
+\begin{itemize}
+\item Model arrival process at the receiver as a Poisson process with a time-varying rate $\lambda$.
+\item Use number of packet arrivals in a 20 ms tick, to infer a distribution of link rates.
+\end{itemize}
+
+\section*{Prediction}
+At the receiver:
+\begin{itemize}
+\item Model evolution of link rates as a random walk with constant volatility.
+\item Explicitly model outages, by biasing the random walk to remain in an outage.
+\item Cautious forecast: Derive the 5th percentile of cumulative number of packet deliveries.
+\item Send back forecast to sender.
+\item Almost all steps are precalculated.
+\item TODO: Throw in Sprout's Model
+\end{itemize}
+
+\section*{Control}
+At the sender:
+\begin{itemize}
+\item Fill up 100 ms forecast window.
+\item TODO: Put in figure of forecasting.
+\end{itemize}
+
+\section*{Evaluation}
+\begin{itemize}
+\item Saturate a cellular link in both the uplink and downlink directions.
+\item Use saturated trace to drive a trace driven link emulator.
+\item We also evaluate Sprout-EWMA, a simplified variant, that uses an EWMA filter to track link rates and simply feeds it back to the sender. It doesn't predict link rates or infer a link rate distribution.
+\end{itemize}
+
+\section*{6.829 contest}
+\begin{itemize}
+\item one
+\item two
+\item thre
+\end{itemize}
+
+\section*{Results}
+\begin{itemize}
+\item TODO: Verizon 4G uplink
+\item TODO: TMobile 3G uplink
+\item TODO: AT\&T 3G uplink
+\end{itemize}
+
+
+\end{multicols}
