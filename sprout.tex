@@ -1,73 +1,156 @@
 \begin{multicols}{2}
 \section*{Problem setting}
-\begin{itemize}
-\item Cellular networks are variable.
 \begin{centering}
-{\small
-\def\svgwidth{\columnwidth}\input{allcapacity.pdf_tex}
-}
+{\large \bf Cellular networks are variable.}
+\begin{center}
+\def\svgwidth{0.75\columnwidth}\input{allcapacity.pdf_tex}
+\end{center}
 \end{centering}
-\item Cellular networks are too reliable.
-\item Consequently, interactive apps perform poorly because they are reactive
-\end{itemize}
+
+\begin{centering}
+{\large \bf Cellular networks are too reliable.}
+\begin{center}
+{\bf \huge
+\def\svgwidth{0.75\columnwidth}\input{pings.pdf_tex}
+}
+\end{center}
+\end{centering}
+
+{\large \bf Consequently, interactive apps perform poorly because they are reactive.}
 
 \section*{Sprout's goal}
-\begin{itemize}
-\item Maximize throughput at receiver.
-\item Subject to a bounded risk (at most 5\%) of delay exceeding 100 ms.
-\end{itemize}
+{\large \bf
+\begin{center}
+Maximum throughput subject to a bounded risk of delay exceeding 100 ms.
+\end{center}
+}
 
 \section*{How it works}
+{\large \bf
 \begin{itemize}
 \item {\textbf Inference:} Infer probability distribution of link speeds from packet arrivals.
 \item {\textbf Prediction:} Predict future link speed.
-\item {\textbf Control:} Send as much as possible, but ensuring a 95 \% probability that all packets are delivered within 100 ms.
+\item {\textbf Control:} Send as much as possible, but ensuring a 95 \% chance that all packets are delivered within 100 ms.
 \end{itemize}
+}
+\begin{centering}
+\def\svgwidth{0.85 \columnwidth}\input{sprout-model.pdf_tex}
+\end{centering}
 
 \section*{Inference}
-\begin{itemize}
-\item Model arrival process at the receiver as a Poisson process with a time-varying rate $\lambda$.
-\item Use number of packet arrivals in a 20 ms tick, to infer a distribution of link rates.
-\end{itemize}
-
-\section*{Prediction}
+\begin{center}
+\def\svgwidth{0.7 \columnwidth}\input{vz-inter.pdf_tex}
+\end{center}
+{\large \bf
 At the receiver:
 \begin{itemize}
-\item Model evolution of link rates as a random walk with constant volatility.
-\item Explicitly model outages, by biasing the random walk to remain in an outage.
-\item Cautious forecast: Derive the 5th percentile of cumulative number of packet deliveries.
+\item Model receiver's arrivals as a Poisson process with a time-varying rate $\lambda$.
+\item Count number of packet arrivals in a 20 ms tick, to infer link rate distribution.
+\end{itemize}
+}
+
+\section*{Prediction}
+{\large \bf
+At the receiver:
+\begin{itemize}
+\item Model evolution of link rates as Brownian motion with constant volatility $\sigma$.
+\item Explicitly model outages, using outage escape rate $\lambda_{z}$.
+\item Cautious forecast: Find the 5th percentile of the cumulative number of packet deliveries.
 \item Send back forecast to sender.
 \item Almost all steps are precalculated.
-\item TODO: Throw in Sprout's Model
 \end{itemize}
+}
+
 
 \section*{Control}
+{\large \bf
 At the sender:
 \begin{itemize}
-\item Fill up 100 ms forecast window.
-\item TODO: Put in figure of forecasting.
+\item Determine the cumulative number of bytes delivered 100 ms into the future.
+\item Subtract number of bytes already in queue.
+\item Remaining bytes are ``safe" to send.
 \end{itemize}
+}
+
+\begin{centering}
+\includegraphics[width=0.5\columnwidth]{forecast-final.pdf}
+
+\end{centering}
+
 
 \section*{Evaluation}
+{\large \bf
 \begin{itemize}
 \item Saturate a cellular link in both the uplink and downlink directions.
-\item Use saturated trace to drive a trace driven link emulator.
-\item We also evaluate Sprout-EWMA, a simplified variant, that uses an EWMA filter to track link rates and simply feeds it back to the sender. It doesn't predict link rates or infer a link rate distribution.
+\item Use collected trace to drive a trace-driven link emulator.
+\item Measure total throughput and end-to-end delay for reconstructing 95 \% of the signal.
+\item All source code was \textbf{frozen before data collection began}.
 \end{itemize}
+}
 
-\section*{6.829 contest}
-\begin{itemize}
-\item one
-\item two
-\item thre
-\end{itemize}
+{\large \bf
+\begin{center}
+\textbf{Sprout parameters} \\
+\begin{tabular}{|l|l|}
+\hline
+Volatility $\sigma$: fixed @ & $200~\frac{\textrm{pkts}/s}{\sqrt{s}}$ \\
+\hline
+Expected outage time $1/\lambda_z$: & $1~s$ \\
+\hline
+Tick length: & $20~ms$ \\
+\hline
+Forecast length: & $160~ms$ \\
+\hline
+Delay target: & $100~ms$ \\
+\hline
+Risk tolerance: & $5 \%$ \\
+\hline
+\end{tabular}
+\end{center}
+}
+\vspace{\baselineskip}
 
+
+%%%\section*{6.829 contest}
+%%%\begin{itemize}
+%%%\item one
+%%%\item two
+%%%\item thre
+%%%\end{itemize}
+%%%
 \section*{Results}
-\begin{itemize}
-\item TODO: Verizon 4G uplink
-\item TODO: TMobile 3G uplink
-\item TODO: AT\&T 3G uplink
-\end{itemize}
+\subsection*{Sprout outperforms other end-to-end protocols}
+\begin{center}
+\def\svgwidth{0.44\columnwidth}{\footnotesize  \bf \input{VerizonLTE-Downlink.pdf_tex}}
+\hspace{0.1\columnwidth}
+\def\svgwidth{0.44\columnwidth}{\footnotesize  \bf \input{ATTLTE-Downlink.pdf_tex}}
+\end{center}
 
+\begin{center}
+\def\svgwidth{0.44\columnwidth}{\footnotesize  \bf \input{T-Mobile3GUMTS-Downlink.pdf_tex}}
+\hspace{0.1\columnwidth}
+\def\svgwidth{0.44\columnwidth}{\footnotesize \bf  \input{Verizon3G1xEV-DO-Downlink.pdf_tex}}
+\end{center}
+
+\subsection*{Sprout competes with AQM even though it is end-to-end}
+\begin{center}
+\def\svgwidth{0.44\columnwidth}\footnotesize \bf \input{Codels.pdf_tex}
+\end{center}
+
+\subsection*{Sprout, used as a tunnel, successfully isolates competing traffic}
+\begin{center}
+{\large \bf
+\noindent \begin{tabular}{|l|l|l|l|}
+\hline
+& Direct & via Sprout & Benefit \\
+\hline
+\hline
+Cubic throughput & 8336 kbps & 3776 kbps & \cellcolor{red!20}$0.5 \times$ (= worse) \\
+Skype throughput & 78 kbps & 490 kbps & \cellcolor{blue!20}$6 \times$ \\
+Skype 95\% delay & 6.0~s & 0.17~s & \cellcolor{blue!20}$35 \times$ \\
+\hline
+\end{tabular}
+}
+\end{center}
 
 \end{multicols}
