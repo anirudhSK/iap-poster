@@ -59,7 +59,7 @@
     \put(0.3909795,0.00033963){\makebox(0,0)[b]{\smash{0:30}}}%
     \put(0.65101373,0.00033963){\makebox(0,0)[b]{\smash{1:00}}}%
     \put(0.91086961,0.00033963){\makebox(0,0)[b]{\smash{1:30}}}%
-    \put(0.01947655,0.27446351){\rotatebox{90}{\makebox(0,0)[b]{\smash{throughput (kbps)}}}}%
+    \put(0.01947655,0.27446351){\rotatebox{90}{\makebox(0,0)[b]{\smash{Throughput (kbps)}}}}%
     \put(0.56433565,0.54876574){\makebox(0,0)[b]{\smash{Verizon LTE uplink throughput}}}%
   \end{picture}%
 \endgroup%
