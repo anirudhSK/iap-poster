@@ -16,12 +16,12 @@
 \end{center}
 \end{centering}
 
-{\large \bf Consequently, interactive apps perform poorly because they are reactive.}
+{\large \bf Interactive apps perform poorly because they are reactive.}
 
 \section*{Sprout's goal}
 {\large \bf
 \begin{center}
-Maximum throughput subject to a bounded risk of delay exceeding 100 ms.
+Maximize throughput subject to a bounded risk of delay exceeding 100 ms.
 \end{center}
 }
 
@@ -44,8 +44,18 @@ Maximum throughput subject to a bounded risk of delay exceeding 100 ms.
 {\large \bf
 At the receiver:
 \begin{itemize}
+\item Maintain a probability distribution over link rates.
 \item Model receiver's arrivals as a Poisson process with a time-varying rate $\lambda$.
-\item Count number of packet arrivals in a 20 ms tick, to infer link rate distribution.
+\item Observe number of bytes $k$ that arrived in a tick of duration $\tau$.
+\item Compute the likelihood $L(x)$ that a Poisson process with rate $\lambda$ generated $k$ bytes.
+      \begin{equation}
+       L(x) = \frac{(x.\tau)^{k}}{k!}exp(-x.\tau)
+      \end{equation}
+\item Update current probability distribution using $L(x)$
+      \begin{equation}
+       F(x) = Pr_{old}(\lambda = x)*L(x)
+      \end{equation}
+\item Normalize the new probabilities $F(x)$, so that they sum to unity.
 \end{itemize}
 }
 
@@ -55,7 +65,7 @@ At the receiver:
 \begin{itemize}
 \item Model evolution of link rates as Brownian motion with constant volatility $\sigma$.
 \item Explicitly model outages, using outage escape rate $\lambda_{z}$.
-\item Cautious forecast: Find the 5th percentile of the cumulative number of packet deliveries.
+\item Cautious forecast: Find the 5th percentile of the cumulative number of packet deliveries for a certain number of ticks in the future.
 \item Send back forecast to sender.
 \item Almost all steps are precalculated.
 \end{itemize}
@@ -82,15 +92,20 @@ At the sender:
 {\large \bf
 \begin{itemize}
 \item Saturate a cellular link in both the uplink and downlink directions.
-\item Use collected trace to drive a trace-driven link emulator.
+\item Playback trace in a trace-driven link emulator.
 \item Measure total throughput and end-to-end delay for reconstructing 95 \% of the signal.
-\item All source code was \textbf{frozen before data collection began}.
+\item Also evaluated Sprout-EWMA, a simplified variant of Sprout:
+      \begin{itemize}
+      \item At the receiver, estimate link rate using a moving average filter.
+      \item Send link rate estimate to the sender, with no forecast.
+      \end{itemize}
+\item All source code was \textbf{frozen before data collection}.
 \end{itemize}
 }
 
 {\large \bf
 \begin{center}
-\textbf{Sprout parameters} \\
+\textbf{Sprout parameters used in evaluation} \\
 \begin{tabular}{|l|l|}
 \hline
 Volatility $\sigma$: fixed @ & $200~\frac{\textrm{pkts}/s}{\sqrt{s}}$ \\
