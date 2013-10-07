@@ -12,7 +12,7 @@
 \begin{itemize}
 \item Interactive video conferencing apps need both high throughput \& low delay.
 \item Bulk transfers care only about high throughput.
-\item Web browsers care about flow completion time (FCT).
+\item Web browsers care about minimizing flow completion time (FCT).
 \end{itemize}
 
 \subsection*{Applications run different transport protocols.}
@@ -73,7 +73,7 @@
 
 \item[C)] {\bf Bufferbloat+FQ}:
   \begin{itemize}
-  \item Queue management: Don't drop any packets
+  \item Queue management: Don't drop any packets.
   \item Scheduling: Fair Queuing
   \end{itemize}
 
@@ -113,7 +113,7 @@
 \subsection*{Make the data plane more flexible.}
 \begin{itemize}
 \item There will never be one conclusive queueing and scheduling scheme.
-\item Application demands on the network will continue to evolve.
+\item Application demands will continue to evolve.
 \item Networks supporting these application will evolve as well.
 \item The Data Plane should support new queueing and scheduling schemes.
 \item Not the same as just picking between multiple existing schemes.
@@ -121,7 +121,7 @@
 
 \subsection*{But, do so in a controlled manner.}
 \begin{itemize}
-\item Disallow arbitrary programs from running on the switch.
+\item Prevent arbitrary programs from running on the switch.
 \item Allow the network operator to determine only queuing and scheduling.
 \end{itemize}
 
@@ -179,7 +179,7 @@ Cross-layer primitives & $LinkRates$ & Get current link rate. \\
 \begin{center}
 \includegraphics[width=\columnwidth]{codel.pdf}
 \end{center}
-\item \textbf{CoDel resource utilization on Xilinx Kintex-7}\\
+\item \textbf{CoDel resource utilization on Xilinx Kintex-7:}\\
 \begin{center}
 \begin{tabular}{|l|l|l|}
 \hline
@@ -199,8 +199,8 @@ Cross-layer primitives & $LinkRates$ & Get current link rate. \\
 \begin{itemize}
 \item Cannot express several important network functions:
       \begin{itemize}
-      \item ``Deep packet'' inspection
-      \item Intrusion detection
+      \item ``Deep-packet'' Inspection
+      \item Intrusion Detection
       \item Spam Filtering
       \end{itemize}
 \item Mechanism for signaling application objectives to the network.
@@ -209,7 +209,7 @@ Cross-layer primitives & $LinkRates$ & Get current link rate. \\
       \item But ASes generally don't honor codepoints from other ASes.
       \item May be a non-issue inside a Data Center.
       \end{itemize}
-\item Most switches today have a shared pipeline with more demanding requirements.
+\item Most switches today have a shared pipeline with demanding requirements.
       \begin{itemize}
       \item Top-of-the-line switches have 64 ports, each running at 10G.
       \item Implies that queueing/scheduling logic should run at 64*10G.
@@ -224,6 +224,7 @@ Cross-layer primitives & $LinkRates$ & Get current link rate. \\
       \item Across switch vendors.
       \item Across FPGA vendors.
       \end{itemize}
+\item Energy and area overheads.
 \end{itemize}
 
 \end{multicols}
