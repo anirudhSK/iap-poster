@@ -3,7 +3,7 @@
 \section*{The Data Plane is continuously evolving.}
 \begin{itemize}
 \item New scheduling and queue management algorithms are proposed every year.
-\item Each wins in it's own evaluation under it's own workloads.
+\item Each wins in its own evaluation under its own workloads.
 \item There is a tacit belief in a final answer to these questions.
 \end{itemize}
 
@@ -23,32 +23,32 @@
 \item Yet others respond to both delay and packet loss, e.g., Compound TCP.
 \end{itemize}
 
-\subsection*{Applications face diverse network conditions.}
+\subsection*{Applications run in diverse network conditions.}
 \begin{itemize}
 \item High-speed, low-latency, Data Center networks
 \item Low-speed, high-latency, transcontinental links
 \item High-speed, high-variability, bufferbloated LTE links
 \end{itemize}
 
-\section*{Cyclic preferences among in-network schemes}
-\subsection*{Workloads}
+\section*{Applications have cyclic preferences}
+\subsection*{Workloads:}
 \begin{itemize}
 
 \item \textbf{\emph{Bulk}}: 
   \begin{itemize}
-  \item Traffic: A single long-running TCP NewReno.
+  \item Traffic: A single long-running TCP NewReno stream.
   \item Objective: Maximize average throughput.
   \end{itemize}
 
 \item \textbf{\emph{Web}}:
   \begin{itemize}
-  \item Traffic: A single on-off TCP NewReno flow.
+  \item Traffic: A single on-off TCP NewReno stream.
   \item Objective: Minimize flow completion time at the 99.9th percentile.
   \end{itemize}
 
 \item \textbf{\emph{Interactive}}:
   \begin{itemize}
-  \item Traffic: A single long-running TCP NewReno.
+  \item Traffic: A single long-running TCP NewReno stream.
   \item Objective: Maximize the ratio of average throughput and average
   round-trip delay (``power'').
   \end{itemize}
@@ -56,7 +56,7 @@
 \end{itemize}
 
 
-\subsection*{In-network schemes}
+\subsection*{In-network schemes:}
 \begin{enumerate}
 
 \item[A)] {\bf CoDel+FCFS}:
@@ -73,7 +73,7 @@
 
 \item[C)] {\bf Bufferbloat+FQ}:
   \begin{itemize}
-  \item Queue managemnt: Don't drop any packets
+  \item Queue management: Don't drop any packets
   \item Scheduling: Fair Queuing
   \end{itemize}
 
@@ -92,7 +92,7 @@
  
 \item FCFS is preferable to Fair Queuing in some cases.
       \begin{itemize}
-      \item Reason: When flows are equally aggressive, they don't need protection from each other.
+      \item Reason: When competeing flows are equally aggressive, they don't need protection from each other.
       \end{itemize}
 
 \item Fair Queuing is required in some cases.
@@ -206,7 +206,7 @@ Cross-layer primitives & $LinkRates$ & Get current link rate. \\
 \item Mechanism for signaling application objectives to the network.
       \begin{itemize}
       \item Could use DiffServ codepoints.
-      \item But ASes generally do not honor codepoints from other ASes.
+      \item But ASes generally don't honor codepoints from other ASes.
       \item May be a non-issue inside a Data Center.
       \end{itemize}
 \item Most switches today have a shared pipeline with more demanding requirements.
