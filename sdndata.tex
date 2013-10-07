@@ -49,7 +49,7 @@
 \item \textbf{\emph{Interactive}}:
   \begin{itemize}
   \item Traffic: A single long-running TCP NewReno stream.
-  \item Objective: Maximize the ratio of average throughput and average
+  \item Objective: Maximize the ratio of average throughput to average
   round-trip delay (``power'').
   \end{itemize}
 
@@ -81,7 +81,9 @@
 
 \subsection*{Visualizing cyclic preferences}
 \textbf{None of the below queue-management and scheduling configurations is best. Power is throughput/delay. $A\to B$ indicates that A is better than B.} \\
+\begin{center}
 \includegraphics[width=\columnwidth]{fig.pdf}
+\end{center}
 
 \section*{Key Findings}
 \begin{itemize}
@@ -171,7 +173,7 @@ Cross-layer primitives & $LinkRates$ & Get current link rate. \\
 \section*{Example implementation: CoDel}
 
 \begin{itemize}
-\item CoDel implementation in SystemVerilog.
+\item Implemented CoDel in SystemVerilog.
 \item Synthesized into gate-level netlist using Xilinx's freely available Vivado WebPacket compiler.
 \item Block diagram of implementation:
 \\
@@ -187,10 +189,11 @@ Cross-layer primitives & $LinkRates$ & Get current link rate. \\
 \hline Slice logic dist. & 1,969 & 4\% \\
 \hline IO/GTX ports & 27 & 6\% \\
 \hline DSP slices & 0 & 0\% \\
-\hline Maximum speed & 12.9 $\times 10^6$ pkts/s & N/A \\
+%\hline Maximum speed & 12.9 million pkts/s & N/A \\
 \hline
 \end{tabular}
 \end{center}
+\item Synthesized implementation passes timing checks at 12.9 million pkts/s
 
 \end{itemize}
 
