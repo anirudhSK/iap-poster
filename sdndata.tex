@@ -1,0 +1,230 @@
+{\large \bf
+\begin{multicols}{2}
+\section*{The Data Plane is continuously evolving.}
+\begin{itemize}
+\item New scheduling and queue management algorithms are proposed every year.
+\item Each wins in it's own evaluation under it's own workloads.
+\item There is a tacit belief in a final answer to these questions.
+\end{itemize}
+
+\section*{Yet, there is no silver bullet.}
+\subsection*{Different applications care about different things.}
+\begin{itemize}
+\item Interactive video conferencing apps need both high throughput \& low delay.
+\item Bulk transfers care only about high throughput.
+\item Web browsers care about flow completion time (FCT).
+\end{itemize}
+
+\subsection*{Applications run different transport protocols.}
+\begin{itemize}
+\item Some respond to loss, e.g., TCP Cubic, TCP NewReno.
+\item Others respond to packet inter-arrival times, e.g., WebRTC, LEDBAT.
+\item Others respond to per-packet delay, e.g., TCP Vegas.
+\item Yet others respond to both delay and packet loss, e.g., Compound TCP.
+\end{itemize}
+
+\subsection*{Applications face diverse network conditions.}
+\begin{itemize}
+\item High-speed, low-latency, Data Center networks
+\item Low-speed, high-latency, transcontinental links
+\item High-speed, high-variability, bufferbloated LTE links
+\end{itemize}
+
+\section*{Cyclic preferences among in-network schemes}
+\subsection*{Workloads}
+\begin{itemize}
+
+\item \textbf{\emph{Bulk}}: 
+  \begin{itemize}
+  \item Traffic: A single long-running TCP NewReno.
+  \item Objective: Maximize average throughput.
+  \end{itemize}
+
+\item \textbf{\emph{Web}}:
+  \begin{itemize}
+  \item Traffic: A single on-off TCP NewReno flow.
+  \item Objective: Minimize flow completion time at the 99.9th percentile.
+  \end{itemize}
+
+\item \textbf{\emph{Interactive}}:
+  \begin{itemize}
+  \item Traffic: A single long-running TCP NewReno.
+  \item Objective: Maximize the ratio of average throughput and average
+  round-trip delay (``power'').
+  \end{itemize}
+
+\end{itemize}
+
+
+\subsection*{In-network schemes}
+\begin{enumerate}
+
+\item[A)] {\bf CoDel+FCFS}:
+  \begin{itemize}
+  \item Queue management: CoDel
+  \item Scheduling: FCFS
+  \end{itemize}
+
+\item[B)] {\bf CoDel+FQ}:
+  \begin{itemize}
+  \item Queue management: CoDel
+  \item Scheduling: Fair Queuing
+  \end{itemize}
+
+\item[C)] {\bf Bufferbloat+FQ}:
+  \begin{itemize}
+  \item Queue managemnt: Don't drop any packets
+  \item Scheduling: Fair Queuing
+  \end{itemize}
+
+\end{enumerate}
+
+\subsection*{Visualizing cyclic preferences}
+\textbf{None of the below queue-management and scheduling configurations is best. Power is throughput/delay. $A\to B$ indicates that A is better than B.} \\
+\includegraphics[width=\columnwidth]{fig.pdf}
+
+\section*{Key Findings}
+\begin{itemize}
+\item Dropping packets on a variable link results in substantial throughput loss.
+      \begin{itemize}
+      \item Reason: There is an inherent delay-throughput tradeoff, unlike static links.
+      \end{itemize} 
+ 
+\item FCFS is preferable to Fair Queuing in some cases.
+      \begin{itemize}
+      \item Reason: When flows are equally aggressive, they don't need protection from each other.
+      \end{itemize}
+
+\item Fair Queuing is required in some cases.
+      \begin{itemize}      
+      \item Reason: When competing flows are not equally aggressive, they need isolation from each other.
+      \end{itemize}
+
+\item Dropping packets hurts Flow Completion Time.
+      \begin{itemize}
+      \item Reason: Packet drops occur near the end of a flow, preventing DUP ACKs.
+      \end{itemize}
+
+\end{itemize}
+
+%\textbf{Detailed results}
+%\input{tables}
+\section*{The Solution:}
+\subsection*{Make the data plane more flexible.}
+\begin{itemize}
+\item There will never be one conclusive queueing and scheduling scheme.
+\item Application demands on the network will continue to evolve.
+\item Networks supporting these application will evolve as well.
+\item The Data Plane should support new queueing and scheduling schemes.
+\item Not the same as just picking between multiple existing schemes.
+\end{itemize}
+
+\subsection*{But, do so in a controlled manner.}
+\begin{itemize}
+\item Disallow arbitrary programs from running on the switch.
+\item Allow the network operator to determine only queuing and scheduling.
+\end{itemize}
+
+\section*{A blueprint for a flexible data plane}
+
+\begin{itemize}
+\item Standardized interfaces to the rest of the switch
+
+\begin{center}
+
+\begin{tabular}{|l|l|l|}
+\hline
+\bf Class of primitive & \bf Primitive Name & \bf Description \\
+\hline
+Utilities & $Now$ & Get current time. \\
+\hline
+Queue primitives & $Size$ & Get queue length. \\
+\hline
+Queue primitives & $DropFront$ & Drop packet from head of queue.  \\
+\hline
+Queue primitives & $DropTail$ & Drop packet from tail of queue. \\
+\hline
+Queue primitives & $Enqueue$ & Enqueue packet at tail of queue. \\
+\hline
+Queue primitives & $Dequeue$ & Dequeue packet from head of queue. \\
+\hline
+Queue primitives & $Transmit$ & Transmit single packet. \\
+\hline
+Signaling primitives & $LinkReady$ & Link is ready to accept packet. \\
+\hline
+Signaling primitives & $Arrival$ & New packet just arrived. \\
+\hline
+Packet primitives & $Timestamp$ & Packet's arrival timestamp. \\
+\hline
+Packet primitives & $Mark$ & Set ECN bit. \\
+\hline
+Cross-layer primitives & $LinkRates$ & Get current link rate. \\
+\hline
+\end{tabular}
+\end{center}
+%\caption{Data-plane primitives: wires exposed by the network processor to and from the FPGA}
+
+\item Designate a portion of the switch for reconfigurable logic.
+\item Hard resource limits on the amount of reconfigurable logic.
+\item Express queuing/scheduling logic as code in a high-level language.
+\end{itemize}
+
+\section*{Example implementation: CoDel}
+
+\begin{itemize}
+\item CoDel implementation in SystemVerilog.
+\item Synthesized into gate-level netlist using Xilinx's freely available Vivado WebPacket compiler.
+\item Block diagram of implementation:
+\\
+\begin{center}
+\includegraphics[width=\columnwidth]{codel.pdf}
+\end{center}
+\item \textbf{CoDel resource utilization on Xilinx Kintex-7}\\
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\bf Resource & \bf Usage & \bf Fraction of FPGA \\
+\hline Slice logic & 1,257 & 2\% \\
+\hline Slice logic dist. & 1,969 & 4\% \\
+\hline IO/GTX ports & 27 & 6\% \\
+\hline DSP slices & 0 & 0\% \\
+\hline Maximum speed & 12.9 $\times 10^6$ pkts/s & N/A \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{itemize}
+
+\section*{Limitations}
+\begin{itemize}
+\item Cannot express several important network functions:
+      \begin{itemize}
+      \item ``Deep packet'' inspection
+      \item Intrusion detection
+      \item Spam Filtering
+      \end{itemize}
+\item Mechanism for signaling application objectives to the network.
+      \begin{itemize}
+      \item Could use DiffServ codepoints.
+      \item But ASes generally do not honor codepoints from other ASes.
+      \item May be a non-issue inside a Data Center.
+      \end{itemize}
+\item Most switches today have a shared pipeline with more demanding requirements.
+      \begin{itemize}
+      \item Top-of-the-line switches have 64 ports, each running at 10G.
+      \item Implies that queueing/scheduling logic should run at 64*10G.
+      \item If queue management is enqueue-based, e.g., RED, this problem cannot be fixed by replicating digital logic on each port.
+      \end{itemize}
+\item Mechanism to map flows onto per-port queues is required for scheduling.
+      \begin{itemize}
+      \item Also need to decide on the number of such queues.
+      \end{itemize}
+\item Interoperability
+      \begin{itemize}
+      \item Across switch vendors.
+      \item Across FPGA vendors.
+      \end{itemize}
+\end{itemize}
+
+\end{multicols}
+}
