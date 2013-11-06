@@ -76,10 +76,36 @@ Workloads:
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Quantifying ``No Silver Bullet'': Cyclic Preference Loops}
-\textbf{No single network configuration is the best.} \\
+\frametitle{Quantifying ``No Silver Bullet''}
+\begin{center}
+\includegraphics[width=\columnwidth]{fig-3.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{Quantifying ``No Silver Bullet''}
+\begin{center}
+\includegraphics[width=\columnwidth]{fig-2.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{Quantifying ``No Silver Bullet''}
+\begin{center}
+\includegraphics[width=\columnwidth]{fig-1.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{Quantifying ``No Silver Bullet''}
 \begin{center}
 \includegraphics[width=\columnwidth]{fig.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[plain]
+\begin{center}
+\LARGE No single network configuration is the best.
 \end{center}
 \end{frame}
 
@@ -107,7 +133,7 @@ Workloads:
 \frametitle{The Solution}
 Flexible Switch Data Planes
 \begin{itemize}
-\item No ``Silver Bullet'' queue-management/scheduling scheme
+\item No universal queue-management/scheduling scheme
 \item Application demands continue to evolve.
 \item Networks supporting these applications will evolve as well.
 \item The Data Plane should support newly developed schemes.
@@ -125,34 +151,33 @@ Flexible Switch Data Planes
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Re-architecting network switches for data plane programmability.}
+\frametitle{Re-architecting for data plane programmability.}
 \begin{itemize}
 \item Hardware Primitives
       \begin{itemize}
-      \item Random number generators
-      \item Binary tree of comparators
-      \item EWMA estimators
+      \item Random number generators (RED, BLUE)
+      \item Binary tree of comparators (pFabric, SRPT)
+      \item EWMA estimators (AVQ, CSFQ)
       \end{itemize}
 
 \item I/O interfaces
       \begin{itemize}
-      \item Access to head/tail of queue
-      \item Drop from head/tail of queue
+      \item Drop/Mark head/tail of queue
       \item Interrupts for enqueue/dequeue
-      \item Reading packet fields
+      \item Reading packet headers
       \end{itemize}
 
 \item State variables
       \begin{itemize}
-      \item Per-flow
-      \item For fastest flows alone
-      \item Per-src address
+      \item Per-flow (WFQ, DRR)
+      \item Per-src address (PF)
+      \item For fastest flows alone (AFD)
       \end{itemize}
 
 \item Instruction Set
       \begin{itemize}
-      \item Express Control Flow
-      \item Implement new functionality unavailable in hardware
+      \item Expresses Control Flow
+      \item Implements new functionality unavailable in hardware
       \end{itemize}
 \end{itemize}
 \end{frame}
@@ -163,7 +188,7 @@ Flexible Switch Data Planes
 \includegraphics[width=\columnwidth]{codel.pdf}
 \end{center}
 \begin{center}
-Synthesis numbers: \\
+Synthesis numbers on Xilinx Kintex-7: \\
 \begin{tabular}{lll}
 \bf Resource & \bf Usage & \bf Fraction of FPGA \\
 \hline Slice logic & 1,256 & 1\% \\
@@ -172,7 +197,6 @@ IO/GTX ports & 27 & 2\% \\
 DSP slices & 0 & 0\% \\
 Maximum speed & 12.9 $\times 10^6$ pkts/s \\
 \end{tabular}
-}
 \end{center}
 \end{frame}
 
