@@ -124,6 +124,58 @@ Flexible Switch Data Planes
 \end{itemize}
 \end{frame}
 
+\begin{frame}[plain]
+\frametitle{Re-architecting network switches for data plane programmability.}
+\begin{itemize}
+\item Hardware Primitives
+      \begin{itemize}
+      \item Random number generators
+      \item Binary tree of comparators
+      \item EWMA estimators
+      \end{itemize}
+
+\item I/O interfaces
+      \begin{itemize}
+      \item Access to head/tail of queue
+      \item Drop from head/tail of queue
+      \item Interrupts for enqueue/dequeue
+      \item Reading packet fields
+      \end{itemize}
+
+\item State variables
+      \begin{itemize}
+      \item Per-flow
+      \item For fastest flows alone
+      \item Per-src address
+      \end{itemize}
+
+\item Instruction Set
+      \begin{itemize}
+      \item Express Control Flow
+      \item Implement new functionality unavailable in hardware
+      \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{Example implementation: CoDel}
+\begin{center}
+\includegraphics[width=\columnwidth]{codel.pdf}
+\end{center}
+\begin{center}
+Synthesis numbers: \\
+\begin{tabular}{lll}
+\bf Resource & \bf Usage & \bf Fraction of FPGA \\
+\hline Slice logic & 1,256 & 1\% \\
+Slice logic dist. & 1,975 & 2\% \\
+IO/GTX ports & 27 & 2\% \\
+DSP slices & 0 & 0\% \\
+Maximum speed & 12.9 $\times 10^6$ pkts/s \\
+\end{tabular}
+}
+\end{center}
+\end{frame}
+
 %%%%%%%%\section*{A blueprint for a flexible Data Plane}
 %%%%%%%%
 %%%%%%%%\begin{itemize}
