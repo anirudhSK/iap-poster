@@ -1,4 +1,4 @@
-REPORT=poster
+REPORT=talk
 REFS=$(wildcard *.bib)
 LATEX=pdflatex
 BIBTEX=bibtex --min-crossrefs=1000
