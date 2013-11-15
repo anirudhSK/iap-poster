@@ -37,34 +37,34 @@ Two key decisions on a per-packet basis:
 
 \end{itemize}
 \end{frame}
-
-\begin{frame}[plain]
-\frametitle{Early symptoms}
-\begin{itemize}
-\item{Hard to configure wired AQM for wireless links}
-
-\item[]
-
-\item{Several distinct point solutions for datacenters}
-\begin{itemize}
-\item DCTCP, HULL, D3, DeTail, PDQ, pFabric
-\end{itemize}
-
-\item[]
-
-\item{No consensus on the ``right metric"}
-\begin{itemize}
-\item Minimizing missed deadlines
-\item Flow Completion Time
-\item Latency
-\item Throughput
-\item Tail Latency
-\item \dots 
-\end{itemize}
-
-\end{itemize}
-\end{frame}
-
+%%
+%%\begin{frame}[plain]
+%%\frametitle{Early symptoms}
+%%\begin{itemize}
+%%\item{Hard to configure wired AQM for wireless links}
+%%
+%%\item[]
+%%
+%%\item{Several distinct point solutions for datacenters}
+%%\begin{itemize}
+%%\item DCTCP, HULL, D3, DeTail, PDQ, pFabric
+%%\end{itemize}
+%%
+%%\item[]
+%%
+%%\item{No consensus on the ``right metric"}
+%%\begin{itemize}
+%%\item Minimizing missed deadlines
+%%\item Flow Completion Time
+%%\item Latency
+%%\item Throughput
+%%\item Tail Latency
+%%\item \dots 
+%%\end{itemize}
+%%
+%%\end{itemize}
+%%\end{frame}
+%%
 \begin{frame}[plain]
 \frametitle{Quantifying ``No Silver Bullet'': Network Configurations}
 \begin{table}
@@ -99,7 +99,7 @@ each queue\\
 \textbf{\emph{Web}} & Switched TCP flow with ON and OFF periods &
 Minimize 99.9 \%ile flow completion time \\
 & &\\
-\textbf{\emph{Interactive}} & Long-running interactive app & Maximize $\frac{\mbox{throughput}}{\mbox{delay}}$, i.e.,
+\textbf{\emph{Interactive}} & Long-running interactive application & Maximize $\frac{\mbox{throughput}}{\mbox{delay}}$, i.e.,
   ``power'' \\ 
 & &\\
 \hline
