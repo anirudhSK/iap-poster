@@ -1,26 +1,38 @@
 \begin{frame}[plain]
-\frametitle{The Data Plane is continuously evolving.}
+\frametitle{The data plane is continuously evolving}
 \begin{itemize}
-\item Progression of queue-management/scheduling algorithms:
-\begin{itemize}
-\item WFQ, SFQ, RED, BLUE, ECN, XCP, RCP, CoDel, pFabric
-\end{itemize}
-\item Each scheme wins in its own evaluation.
-\item Tacit belief in knobless queue management/scheduling
+\item The unabated march of in-network algorithms
+\begin{center}
+\noindent \hspace{-.75 cm} \includegraphics[width=.9\textwidth]{march.png}
+\end{center}
+
+\item[]
+%\begin{itemize}
+%\item WFQ, SFQ, RED, BLUE, ECN, XCP, RCP, CoDel, pFabric
+%\end{itemize}
+\item Each scheme wins in its own evaluation
+
+\item[]
+
+\item Some believe in a ``silver bullet'' knobless in-network method
+
 \end{itemize}
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Yet, there is no silver bullet.}
+\frametitle{We disagree: There is no silver bullet!}
 \begin{itemize}
-\item{Different applications care about different things.}
+\item{Different applications care about different objectives}
+
+\item[]
 %%\begin{itemize}
 %%\item Interactive video conferencing apps need both high throughput \& low delay.
 %%\item Bulk transfers care only about high throughput.
 %%\item Web browsers care about minimizing flow completion time (FCT).
 %%\end{itemize}
 
-\item{Applications use different transport protocols.}
+\item{Applications use different transport protocols}
+\item[]
 %%%\begin{itemize}
 %%%\item Some respond to loss, e.g., TCP Cubic, TCP NewReno.
 %%%\item Others respond to packet inter-arrival times, e.g., WebRTC, LEDBAT.
@@ -28,59 +40,66 @@
 %%%\item Yet others respond to both delay and packet loss, e.g., Compound TCP.
 %%%\end{itemize}
 
-\item{Diversity in network conditions.}
+\item{Networks are diverse and heterogeneous}
+
 %%\begin{itemize}
 %%\item High-speed, low-latency, Data Center networks
 %%\item Low-speed, high-latency, transcontinental links
 %%\item High-speed, high-variability, bufferbloated LTE links
 %%\end{itemize}
-\item{``One size fits all'' is overly constraining.}
+%\item{``One size fits all'' is overly constraining.}
 \end{itemize}
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Quantifying ``No Silver Bullet'': Network configurations}
-Network Configurations:
+\frametitle{Quantifying ``No Silver Bullet'': Network Configurations}
 \begin{table}
 \begin{tabular}{|p{0.25\linewidth}|p{0.73\linewidth}|}
 \hline
-{\bf Network Configuration} & {\bf Description} \\
-\hline
-{\bf CoDel+FCFS} & CoDel running on a single shared first-come, first-served queue.\\
-\hline
-{\bf CoDel+FQ} & A separate queue for each flow with an independent instance of CoDel running on each queue. Queues are serviced using fair queueing. \\
-\hline
-{\bf Bufferbloat+FQ} & A separate queue for each flow with a deep buffer that doesn't drop any packets. Queues are serviced using fair queueing. \\
+{\bf \underline{Configuration}} & {\bf \underline{Description}} \\
+&\\
+{\bf CoDel+FCFS} & One shared FCFS queue with CoDel\\
+& \\
+%\hline
+{\bf CoDel+FQ} & Per-flow fair queueing with CoDel on each queue\\ 
+&\\
+%\hline
+{\bf Bufferbloat+FQ} & Per-flow fair queueing with deep buffers on
+each queue\\ 
+& \\
 \hline
 \end{tabular}
 \end{table}
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Quantifying``No Silver Bullet'': Simulation Workloads}
-%\frametitle{Quantitative evidence for ``No Silver Bullet''}
-Workloads:
+\frametitle{Quantifying``No Silver Bullet'': Workloads and Objectives}
+
 \begin{table}
-\begin{tabular}{|p{0.15\linewidth}|p{0.39\linewidth}|p{0.38\linewidth}|}
+\begin{tabular}{|p{0.18\linewidth}|p{0.37\linewidth}|p{0.38\linewidth}|}
 \hline
-{\bf Workload} & {\bf Description} & {\bf Objective} \\
-\hline
-\textbf{\emph{Bulk}} & Long-running TCP flow. & Maximize average throughput. \\
-\hline
-\textbf{\emph{Web}} & Switched TCP flow that alternates between ON and OFF periods. & Minimize flow completion time at the 99.9th percentile. \\
-\hline
-\textbf{\emph{Interactive}} & Long-running TCP flow representing a real-time interactive application. & Maximize the ratio of throughput and one-way delay, i.e., ``power.'' \\
+{\bf \underline{Workload}} & {\bf \underline{Description}} & {\bf \underline{Objective}} \\
+& &\\
+\textbf{\emph{Bulk}} & Long-running TCP flow & Maximize throughput \\
+& &\\
+\textbf{\emph{Web}} & Switched TCP flow with ON and OFF periods &
+Minimize 99.9 \%ile flow completion time \\
+& &\\
+\textbf{\emph{Interactive}} & Long-running real-time
+streaming app & Maximize $\frac{\mbox{throughput}}{\mbox{delay}}$, i.e.,
+  ``power'' \\ 
+& &\\
 \hline
 \end{tabular}
 \end{table}
 \end{frame}
 
-\begin{frame}[plain]
-\frametitle{Quantifying ``No Silver Bullet''}
-\begin{center}
-\includegraphics[width=\columnwidth]{fig-3.pdf}
-\end{center}
-\end{frame}
+%\begin{frame}[plain]
+%\frametitle{Quantifying ``No Silver Bullet''}
+%\begin{center}
+%\includegraphics[width=\columnwidth]{fig-3.pdf}
+%\end{center}
+%\end{frame}
 
 \begin{frame}[plain]
 \frametitle{Quantifying ``No Silver Bullet''}
@@ -104,80 +123,86 @@ Workloads:
 \end{frame}
 
 \begin{frame}[plain]
-\begin{center}
-\LARGE No single network configuration is the best.
-\end{center}
-\end{frame}
-
-\begin{frame}[plain]
-\frametitle{Explaining cyclic preferences}
+\frametitle{Why is no single data plane configuration the best?}
 \begin{itemize}
-\item Dropping packets significantly degrades throughput.
+\item Bufferbloat on variable-rate links helps throughput!
       \begin{itemize}
-      \item Reason: Variable-rate links have an inherent delay-throughput tradeoff, unlike static links.
+      \item Variable-rate links have an inherent delay-throughput tradeoff
       \end{itemize} 
- 
-\item FCFS is preferable to Fair Queuing in some cases.
+
+\item[] 
+
+\item FCFS is preferable to Fair Queuing in some cases
       \begin{itemize}
-      \item Reason: When equally aggressive flows compete, they don't need protection from each other.
+      \item When equally aggressive flows compete, they don't need
+        protection from each other
+        \item Helps reduce tail packet delay
       \end{itemize}
 
-\item Fair Queuing is required in some cases.
+\item[]
+
+\item Fair Queuing is required in some cases
       \begin{itemize}      
-      \item Reason: When competing flows are not equally aggressive, they need isolation from each other.
+      \item When competing flows aren't equally aggressive,
+        isolation helps
       \end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{The Solution}
-Flexible Switch Data Planes
+\frametitle{So what should the network designer do?}
+Architect a flexible data plane
 \begin{itemize}
-\item No universal queue-management/scheduling scheme
-\item Application demands continue to evolve.
-\item Networks supporting these applications will evolve as well.
-\item The Data Plane should support newly developed schemes.
+\item Implement in-network queue management and scheduling in a
+  programmable way
+\item Not just for selecting among pre-built choices, but to change
+  behavior in the field
+\item Because there is no silver bullet and innovation will continue!
 \end{itemize}
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{But, do so in a controlled manner.}
+\frametitle{Controlled flexibility: Want performance, security,
+  reliability}
+
+(Or, why this isn't the same as ``active networks'')
+
 \begin{itemize}
-\item Provide interfaces to the head and tail of switch queues.
-\item Operators specify only queue-management/scheduling logic.
-\item Code size limits constrain program sophistication.
-\item Disallow access to packet payloads.
+\item Provide interfaces to the head and tail of queues
+\item Operators specify only queue-management/scheduling logic
+\item Code size limits constrain program sophistication
+\item No access to packet payloads (for now)
 \end{itemize}
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Re-architecting for data plane programmability.}
+\frametitle{Building such a data plane in four parts}
 \begin{itemize}
-\item Hardware Primitives
+\item Hardware gadgets (primitives)
       \begin{itemize}
       \item Random number generators (RED, BLUE)
       \item Binary tree of comparators (pFabric, SRPT)
-      \item EWMA estimators (AVQ, CSFQ)
+      \item EWMA estimators (RED, AVQ, CSFQ)
       \end{itemize}
 
 \item I/O interfaces
       \begin{itemize}
-      \item Drop/Mark head/tail of queue
+      \item Drop/mark head/tail of queue
       \item Interrupts for enqueue/dequeue
-      \item Reading packet headers
+      \item Read packet headers
       \end{itemize}
 
-\item State variables
+\item State maintenance
       \begin{itemize}
       \item Per-flow (WFQ, DRR)
       \item Per-src address (PF)
       \item For fastest flows alone (AFD)
       \end{itemize}
 
-\item Instruction Set
+\item A domain-specific instruction set
       \begin{itemize}
-      \item Expresses Control Flow
-      \item Implements new functionality unavailable in hardware
+      \item Expresses control flow
+      \item Implements new functions unavailable in hardware
       \end{itemize}
 \end{itemize}
 \end{frame}
@@ -198,6 +223,24 @@ DSP slices & 0 & 0\% \\
 Maximum speed & 12.9 $\times 10^6$ pkts/s \\
 \end{tabular}
 \end{center}
+\end{frame}
+
+
+\begin{frame}[plain]
+\frametitle{Conclusion}
+\begin{itemize}
+
+\item There is no silver bullet to in-network resource control because
+  of application and network diversity
+
+\item[]
+\item Algorithms will continue to evolve: the data plane should help
+
+\item[]
+\item Extending SDN to the data plane in a thoughtful manner is a good
+  research direction with potentially high real-world impact
+
+\end{itemize}
 \end{frame}
 
 %%%%%%%%\section*{A blueprint for a flexible Data Plane}
