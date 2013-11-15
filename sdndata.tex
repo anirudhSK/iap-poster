@@ -45,7 +45,7 @@ Two key decisions on a per-packet basis:
 
 \item[]
 
-\item{Several distinct in-network schemes for datacenters}
+\item{Several distinct point solutions for datacenters}
 \begin{itemize}
 \item DCTCP, HULL, D3, DeTail, PDQ, pFabric
 \end{itemize}
@@ -211,25 +211,24 @@ Architect a flexible data plane
 \begin{frame}[plain]
 \frametitle{Building such a data plane in four parts}
 \begin{itemize}
-\item Hardware gadgets (primitives)
+\item Hardware gadgets
       \begin{itemize}
       \item Random number generators (RED, BLUE)
       \item Binary tree of comparators (pFabric, SRPT)
-      \item EWMA estimators (RED, AVQ, CSFQ)
+%      \item EWMA estimators (RED, AVQ, CSFQ)
       \end{itemize}
 
 \item I/O interfaces
       \begin{itemize}
       \item Drop/mark head/tail of queue
       \item Interrupts for enqueue/dequeue
-      \item Read packet headers
       \end{itemize}
 
 \item State maintenance
       \begin{itemize}
       \item Per-flow (WFQ, DRR)
-      \item Per-src address (PF)
-      \item For fastest flows alone (AFD)
+      \item Per-dst address (PF)
+%      \item For fastest flows alone (AFD)
       \end{itemize}
 
 \item A domain-specific instruction set
@@ -241,10 +240,10 @@ Architect a flexible data plane
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Example implementation: CoDel}
-\begin{center}
-\includegraphics[width=\columnwidth]{codel.pdf}
-\end{center}
+\frametitle{Feasibility study: CoDel}
+%\begin{center}
+%\includegraphics[width=\columnwidth]{codel.pdf}
+%\end{center}
 \begin{center}
 Synthesis numbers on Xilinx Kintex-7: \\
 \begin{tabular}{lll}
@@ -253,9 +252,13 @@ Synthesis numbers on Xilinx Kintex-7: \\
 Slice logic dist. & 1,975 & 2\% \\
 IO/GTX ports & 27 & 2\% \\
 DSP slices & 0 & 0\% \\
-Maximum speed & 12.9 $\times 10^6$ pkts/s \\
+Maximum speed & 12.9 $\times 10^6$ pkts/s \url{~ 10 gbps} \\
 \end{tabular}
 \end{center}
+\begin{itemize}
+\item Small fraction of the FPGA's resources.
+\item Can be improved by pipelining or parallelizing.
+\end{itemize}
 \end{frame}
 
 \begin{frame}[plain]
