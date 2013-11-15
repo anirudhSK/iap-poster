@@ -1,15 +1,53 @@
 \begin{frame}[plain]
-\frametitle{The data plane is continuously evolving}
+\frametitle{Switch Data Planes today}
+Two key decisions on a per-packet basis:
 \begin{itemize}
-\item The unabated march of in-network algorithms
+\item Scheduling: Which packet should be sent out next?
+\item[]
+\item Queue Management: How long can queues grow? Which packet to drop?
+\item[]
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{The long lineage of in-network algorithms}
+\begin{center}
+\noindent \hspace{-.75 cm} \includegraphics[width=.9\textwidth]{march-4.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[plain]
+\frametitle{The long lineage of in-network algorithms}
+\begin{center}
+\noindent \hspace{-.75 cm} \includegraphics[width=.9\textwidth]{march-3.png}
+\end{center}
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{The long lineage of in-network algorithms}
+\begin{center}
+\noindent \hspace{-.75 cm} \includegraphics[width=.9\textwidth]{march-2.png}
+\end{center}
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{The long lineage of in-network algorithms}
+\begin{center}
+\noindent \hspace{-.75 cm} \includegraphics[width=.9\textwidth]{march-1.png}
+\end{center}
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{The long lineage of in-network algorithms}
 \begin{center}
 \noindent \hspace{-.75 cm} \includegraphics[width=.9\textwidth]{march.png}
 \end{center}
+\end{frame}
 
-\item[]
-%\begin{itemize}
-%\item WFQ, SFQ, RED, BLUE, ECN, XCP, RCP, CoDel, pFabric
-%\end{itemize}
+\begin{frame}[plain]
+\frametitle{The Data Plane is continuously evolving}
+\begin{itemize}
 \item Each scheme wins in its own evaluation
 
 \item[]
@@ -48,6 +86,33 @@
 %%\item High-speed, high-variability, bufferbloated LTE links
 %%\end{itemize}
 %\item{``One size fits all'' is overly constraining.}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{Early symptoms}
+\begin{itemize}
+\item{Hard to configure wired AQM for wireless links}
+
+\item[]
+
+\item{Several distinct in-network schemes for datacenters}
+\begin{itemize}
+\item DCTCP, HULL, D3, DeTail, PDQ, pFabric
+\end{itemize}
+
+\item[]
+
+\item{No consensus on the ``right metric"}
+\begin{itemize}
+\item Minimizing missed deadlines
+\item Flow Completion Time
+\item Latency
+\item Throughput
+\item Tail Latency
+\item \dots 
+\end{itemize}
+
 \end{itemize}
 \end{frame}
 
@@ -94,12 +159,33 @@ streaming app & Maximize $\frac{\mbox{throughput}}{\mbox{delay}}$, i.e.,
 \end{table}
 \end{frame}
 
-%\begin{frame}[plain]
-%\frametitle{Quantifying ``No Silver Bullet''}
-%\begin{center}
-%\includegraphics[width=\columnwidth]{fig-3.pdf}
-%\end{center}
-%\end{frame}
+\begin{frame}[plain]
+\frametitle{Quantifying ``No Silver Bullet''}
+\begin{center}
+\includegraphics[width=\columnwidth]{fig-6.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{Quantifying ``No Silver Bullet''}
+\begin{center}
+\includegraphics[width=\columnwidth]{fig-5.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{Quantifying ``No Silver Bullet''}
+\begin{center}
+\includegraphics[width=\columnwidth]{fig-4.pdf}
+\end{center}
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{Quantifying ``No Silver Bullet''}
+\begin{center}
+\includegraphics[width=\columnwidth]{fig-3.pdf}
+\end{center}
+\end{frame}
 
 \begin{frame}[plain]
 \frametitle{Quantifying ``No Silver Bullet''}
@@ -225,8 +311,36 @@ Maximum speed & 12.9 $\times 10^6$ pkts/s \\
 \end{center}
 \end{frame}
 
+\begin{frame}[plain]
+\frametitle{Limitations and Practical Considerations:}
+\begin{itemize}
+\item Cannot express several network functions that need payloads.
+\item How do applications signal objectives to the network?
+\item Feasibility at 10G on high port-density  switches.
+\item Mechanism to map flows onto per-port queues.
+\item Energy and Area overheads.
+\end{itemize}
+\end{frame}
 
 \begin{frame}[plain]
+
+\frametitle{Related Work}
+\begin{itemize}
+
+\item Active Networks
+\item[]
+
+\item Software Routers
+\item[]
+
+\item Software-Defined Networking
+\item[]
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+
 \frametitle{Conclusion}
 \begin{itemize}
 
@@ -242,105 +356,3 @@ Maximum speed & 12.9 $\times 10^6$ pkts/s \\
 
 \end{itemize}
 \end{frame}
-
-%%%%%%%%\section*{A blueprint for a flexible Data Plane}
-%%%%%%%%
-%%%%%%%%\begin{itemize}
-%%%%%%%%\item Standardized interfaces to the rest of the switch
-%%%%%%%%
-%%%%%%%%\begin{center}
-%%%%%%%%
-%%%%%%%%\begin{tabular}{|l|l|l|}
-%%%%%%%%\hline
-%%%%%%%%\bf Class of primitive & \bf Primitive Name & \bf Description \\
-%%%%%%%%\hline
-%%%%%%%%Utilities & $Now$ & Get current time. \\
-%%%%%%%%\hline
-%%%%%%%%Queue primitives & $Size$ & Get queue length. \\
-%%%%%%%%\hline
-%%%%%%%%Queue primitives & $DropFront$ & Drop packet from head of queue.  \\
-%%%%%%%%\hline
-%%%%%%%%Queue primitives & $DropTail$ & Drop packet from tail of queue. \\
-%%%%%%%%\hline
-%%%%%%%%Queue primitives & $Enqueue$ & Enqueue packet at tail of queue. \\
-%%%%%%%%\hline
-%%%%%%%%Queue primitives & $Dequeue$ & Dequeue packet from head of queue. \\
-%%%%%%%%\hline
-%%%%%%%%Queue primitives & $Transmit$ & Transmit single packet. \\
-%%%%%%%%\hline
-%%%%%%%%Signaling primitives & $LinkReady$ & Link is ready to accept packet. \\
-%%%%%%%%\hline
-%%%%%%%%Signaling primitives & $Arrival$ & New packet just arrived. \\
-%%%%%%%%\hline
-%%%%%%%%Packet primitives & $Timestamp$ & Packet's arrival timestamp. \\
-%%%%%%%%\hline
-%%%%%%%%Packet primitives & $Mark$ & Set ECN bit. \\
-%%%%%%%%\hline
-%%%%%%%%Cross-layer primitives & $LinkRates$ & Get current link rate. \\
-%%%%%%%%\hline
-%%%%%%%%\end{tabular}
-%%%%%%%%\end{center}
-%%%%%%%%
-%%%%%%%%\item Add a small amount of reconfigurable logic to the switch.
-%%%%%%%%\item Enforce hard resource limits on the amount of reconfigurable logic.
-%%%%%%%%\item Express queuing/scheduling logic as code in a high-level language.
-%%%%%%%%\end{itemize}
-%%%%%%%%
-%%%%%%%%\section*{Example implementation: CoDel}
-%%%%%%%%
-%%%%%%%%\begin{itemize}
-%%%%%%%%\item Implemented CoDel in SystemVerilog.
-%%%%%%%%\item Synthesized into gate-level netlist using Xilinx's freely available Vivado WebPacket compiler.
-%%%%%%%%\item Block diagram of implementation:
-%%%%%%%%\\
-%%%%%%%%\begin{center}
-%%%%%%%%\includegraphics[width=\columnwidth]{codel.pdf}
-%%%%%%%%\end{center}
-%%%%%%%%\item \textbf{CoDel resource utilization on Xilinx Kintex-7:}\\
-%%%%%%%%\begin{center}
-%%%%%%%%\begin{tabular}{|l|l|l|}
-%%%%%%%%\hline
-%%%%%%%%\bf Resource & \bf Usage & \bf Fraction of FPGA \\
-%%%%%%%%\hline Slice logic & 1,257 & 2\% \\
-%%%%%%%%\hline Slice logic dist. & 1,969 & 4\% \\
-%%%%%%%%\hline IO/GTX ports & 27 & 6\% \\
-%%%%%%%%\hline DSP slices & 0 & 0\% \\
-%%%%%%%%%\hline Maximum speed & 12.9 million pkts/s & N/A \\
-%%%%%%%%\hline
-%%%%%%%%\end{tabular}
-%%%%%%%%\end{center}
-%%%%%%%%\item Synthesized implementation passes timing checks at 12.9 million pkts/s
-%%%%%%%%
-%%%%%%%%\end{itemize}
-%%%%%%%%
-%%%%%%%%\section*{Limitations and Practical Considerations:}
-%%%%%%%%\begin{itemize}
-%%%%%%%%\item Cannot express several important network functions:
-%%%%%%%%      \begin{itemize}
-%%%%%%%%      \item ``Deep-packet'' Inspection
-%%%%%%%%      \item Intrusion Detection
-%%%%%%%%      \item Spam Filtering
-%%%%%%%%      \end{itemize}
-%%%%%%%%\item Mechanism for signaling application objectives to the network.
-%%%%%%%%      \begin{itemize}
-%%%%%%%%      \item Could use DiffServ codepoints.
-%%%%%%%%      \item But ASes generally don't honor codepoints from other ASes.
-%%%%%%%%      \item May be a non-issue inside a Data Center.
-%%%%%%%%      \end{itemize}
-%%%%%%%%\item Most switches today have a shared pipeline with demanding requirements.
-%%%%%%%%      \begin{itemize}
-%%%%%%%%      \item Top-of-the-line switches have 64 ports, each running at 10G.
-%%%%%%%%      \item Implies that queueing/scheduling logic should run at 64*10G.
-%%%%%%%%      \item If queue management is enqueue-based, e.g., RED, this problem cannot be fixed by replicating digital logic on each port.
-%%%%%%%%      \end{itemize}
-%%%%%%%%\item Mechanism to map flows onto per-port queues is required for scheduling.
-%%%%%%%%      \begin{itemize}
-%%%%%%%%      \item Also need to decide on the number of such queues.
-%%%%%%%%      \end{itemize}
-%%%%%%%%\item Interoperability
-%%%%%%%%      \begin{itemize}
-%%%%%%%%      \item Across switch vendors.
-%%%%%%%%      \item Across FPGA vendors.
-%%%%%%%%      \end{itemize}
-%%%%%%%%\item Energy and Area overheads.
-%%%%%%%%\end{itemize}
