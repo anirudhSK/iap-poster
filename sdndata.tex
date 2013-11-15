@@ -196,8 +196,7 @@ Architect a flexible data plane
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Controlled flexibility: Want performance, security,
-  reliability}
+\frametitle{Controlled flexibility: Want performance, security}
 
 (Or, why this isn't the same as ``active networks'')
 
@@ -262,17 +261,6 @@ Maximum speed & 12.9 $\times 10^6$ pkts/s \url{~ 10 gbps} \\
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Limitations and Practical Considerations:}
-\begin{itemize}
-\item Cannot express several network functions that need payloads.
-\item How do applications signal objectives to the network?
-\item Feasibility at 10G on high port-density  switches.
-\item Mechanism to map flows onto per-port queues.
-\item Energy and Area overheads.
-\end{itemize}
-\end{frame}
-
-\begin{frame}[plain]
 
 \frametitle{Conclusion}
 \begin{itemize}
@@ -284,8 +272,22 @@ Maximum speed & 12.9 $\times 10^6$ pkts/s \url{~ 10 gbps} \\
 \item Algorithms will continue to evolve: the data plane should help
 
 \item[]
-\item Extending SDN to the data plane in a thoughtful manner is a good
-  research direction with potentially high real-world impact
+\item Directions to reproduce results: \textcolor{DarkBlue}{http://web.mit.edu/anirudh/www/sdn-data-plane.html} 
 
 \end{itemize}
 \end{frame}
+
+
+%% Backup slides 
+\begin{frame}[plain]
+\frametitle{Limitations and Practical Considerations:}
+\begin{itemize}
+\item Cannot express several network functions that need payloads.
+\item How do applications signal objectives to the network?
+\item Feasibility at 10G on high port-density  switches.
+\item Mechanism to map flows onto per-port queues.
+\item Energy and Area overheads.
+\end{itemize}
+\end{frame}
+
+
