@@ -2,7 +2,7 @@
 \frametitle{Switch Data Planes today}
 Two key decisions on a per-packet basis:
 \begin{itemize}
-\item Scheduling: Which packet should be sent out next?
+\item Scheduling: Which packet should be transmitted next?
 \item[]
 \item Queue Management: How long can queues grow? Which packet to drop?
 \item[]
@@ -10,49 +10,16 @@ Two key decisions on a per-packet basis:
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{The long lineage of in-network algorithms}
-\begin{center}
-\noindent \hspace{-.75 cm} \includegraphics[width=.9\textwidth]{march-4.png}
-\end{center}
-\end{frame}
-
-
-\begin{frame}[plain]
-\frametitle{The long lineage of in-network algorithms}
-\begin{center}
-\noindent \hspace{-.75 cm} \includegraphics[width=.9\textwidth]{march-3.png}
-\end{center}
-\end{frame}
-
-\begin{frame}[plain]
-\frametitle{The long lineage of in-network algorithms}
-\begin{center}
-\noindent \hspace{-.75 cm} \includegraphics[width=.9\textwidth]{march-2.png}
-\end{center}
-\end{frame}
-
-\begin{frame}[plain]
-\frametitle{The long lineage of in-network algorithms}
-\begin{center}
-\noindent \hspace{-.75 cm} \includegraphics[width=.9\textwidth]{march-1.png}
-\end{center}
-\end{frame}
-
-\begin{frame}[plain]
-\frametitle{The long lineage of in-network algorithms}
-\begin{center}
-\noindent \hspace{-.75 cm} \includegraphics[width=.9\textwidth]{march.png}
-\end{center}
-\end{frame}
-
-\begin{frame}[plain]
 \frametitle{The Data Plane is continuously evolving}
 \begin{itemize}
-\item Each scheme wins in its own evaluation
-
+\item The long lineage of in-network algorithms:
+\noindent \hspace{-.75 cm} \includegraphics[width=.9\textwidth]{march.png}
+\vspace{-2cm}
 \item[]
-
-\item Some believe in a ``silver bullet'' knobless in-network method
+\item Each scheme wins in its own evaluation.
+\item[]
+\item Some believe in a ``silver bullet'' knobless in-network method.
+\item[]
 
 \end{itemize}
 \end{frame}
@@ -60,32 +27,14 @@ Two key decisions on a per-packet basis:
 \begin{frame}[plain]
 \frametitle{We disagree: There is no silver bullet!}
 \begin{itemize}
-\item{Different applications care about different objectives}
-
+\item{Different applications care about different objectives.}
 \item[]
-%%\begin{itemize}
-%%\item Interactive video conferencing apps need both high throughput \& low delay.
-%%\item Bulk transfers care only about high throughput.
-%%\item Web browsers care about minimizing flow completion time (FCT).
-%%\end{itemize}
 
-\item{Applications use different transport protocols}
+\item{Applications use different transport protocols.}
 \item[]
-%%%\begin{itemize}
-%%%\item Some respond to loss, e.g., TCP Cubic, TCP NewReno.
-%%%\item Others respond to packet inter-arrival times, e.g., WebRTC, LEDBAT.
-%%%\item Others respond to per-packet delay, e.g., TCP Vegas.
-%%%\item Yet others respond to both delay and packet loss, e.g., Compound TCP.
-%%%\end{itemize}
 
-\item{Networks are diverse and heterogeneous}
+\item{Networks are heterogeneous.}
 
-%%\begin{itemize}
-%%\item High-speed, low-latency, Data Center networks
-%%\item Low-speed, high-latency, transcontinental links
-%%\item High-speed, high-variability, bufferbloated LTE links
-%%\end{itemize}
-%\item{``One size fits all'' is overly constraining.}
 \end{itemize}
 \end{frame}
 
@@ -239,8 +188,7 @@ streaming app & Maximize $\frac{\mbox{throughput}}{\mbox{delay}}$, i.e.,
 \frametitle{So what should the network designer do?}
 Architect a flexible data plane
 \begin{itemize}
-\item Implement in-network queue management and scheduling in a
-  programmable way
+\item Programmable queue management and scheduling
 \item Not just for selecting among pre-built choices, but to change
   behavior in the field
 \item Because there is no silver bullet and innovation will continue!
@@ -254,9 +202,8 @@ Architect a flexible data plane
 (Or, why this isn't the same as ``active networks'')
 
 \begin{itemize}
-\item Provide interfaces to the head and tail of queues
+\item Provide interfaces only to the head and tail of queues
 \item Operators specify only queue-management/scheduling logic
-\item Code size limits constrain program sophistication
 \item No access to packet payloads (for now)
 \end{itemize}
 \end{frame}
@@ -319,23 +266,6 @@ Maximum speed & 12.9 $\times 10^6$ pkts/s \\
 \item Feasibility at 10G on high port-density  switches.
 \item Mechanism to map flows onto per-port queues.
 \item Energy and Area overheads.
-\end{itemize}
-\end{frame}
-
-\begin{frame}[plain]
-
-\frametitle{Related Work}
-\begin{itemize}
-
-\item Active Networks
-\item[]
-
-\item Software Routers
-\item[]
-
-\item Software-Defined Networking
-\item[]
-
 \end{itemize}
 \end{frame}
 
