@@ -1,8 +1,9 @@
+\begin{Large}
 \begin{frame}[plain]
 \frametitle{Switch Data Planes today}
 Two key decisions on a per-packet basis:
 \begin{itemize}
-\item Scheduling: Which packet should be transmitted next?
+\item Scheduling: Which packet to transmit next?
 \item[]
 \item Queue Management: How long can queues grow? Which packet to drop?
 \item[]
@@ -37,6 +38,19 @@ Two key decisions on a per-packet basis:
 
 \end{itemize}
 \end{frame}
+
+\begin{frame}[plain]
+\frametitle{Our work:}
+\begin{itemize}
+\item{Quantify non-universality of in-network methods.}
+\item[]
+
+\item{Extend SDN to the Data Plane.}
+\item[]
+
+\end{itemize}
+\end{frame}
+
 %%
 %%\begin{frame}[plain]
 %%\frametitle{Early symptoms}
@@ -68,10 +82,9 @@ Two key decisions on a per-packet basis:
 \begin{frame}[plain]
 \frametitle{Quantifying ``No Silver Bullet'': Network Configurations}
 \begin{table}
-\begin{tabular}{|p{0.25\linewidth}|p{0.73\linewidth}|}
+\begin{tabular}{|p{0.34\linewidth}|p{0.65\linewidth}|}
 \hline
 {\bf \underline{Configuration}} & {\bf \underline{Description}} \\
-&\\
 {\bf CoDel+FCFS} & One shared FCFS queue with CoDel\\
 & \\
 %\hline
@@ -80,7 +93,6 @@ Two key decisions on a per-packet basis:
 %\hline
 {\bf Bufferbloat+FQ} & Per-flow fair queueing with deep buffers on
 each queue\\ 
-& \\
 \hline
 \end{tabular}
 \end{table}
@@ -90,18 +102,15 @@ each queue\\
 \frametitle{Quantifying``No Silver Bullet'': Workloads and Objectives}
 
 \begin{table}
-\begin{tabular}{|p{0.18\linewidth}|p{0.37\linewidth}|p{0.38\linewidth}|}
+\begin{tabular}{|p{0.22\linewidth}|p{0.33\linewidth}|p{0.38\linewidth}|}
 \hline
 {\bf \underline{Workload}} & {\bf \underline{Description}} & {\bf \underline{Objective}} \\
+\textbf{\emph{Bulk}} & Long-running bulk transfer flow & Max. throughput \\
 & &\\
-\textbf{\emph{Bulk}} & Long-running TCP flow & Maximize throughput \\
+\textbf{\emph{Web}} & Switched flow with ON and OFF periods &
+Min. 99.9 \%ile flow completion time \\
 & &\\
-\textbf{\emph{Web}} & Switched TCP flow with ON and OFF periods &
-Minimize 99.9 \%ile flow completion time \\
-& &\\
-\textbf{\emph{Interactive}} & Long-running interactive application & Maximize $\frac{\mbox{throughput}}{\mbox{delay}}$, i.e.,
-  ``power'' \\ 
-& &\\
+\textbf{\emph{Interactive}} & Long-running interactive flow & Max. $\frac{\mbox{throughput}}{\mbox{delay}}$ (power) \\ 
 \hline
 \end{tabular}
 \end{table}
@@ -290,3 +299,4 @@ Maximum speed & 12.9 $\times 10^6$ pkts/s \url{~ 10 gbps} \\
 \end{frame}
 
 
+\end{Large}
