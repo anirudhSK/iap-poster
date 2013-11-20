@@ -51,7 +51,7 @@ Two key decisions on a per-packet basis:
 \item{Quantify non-universality of in-network methods.}
 \item[]
 
-\item{Extend SDN to the Data Plane.}
+\item{Extend SDN to the Data Plane to handle in-network diversity.}
 \item[]
 
 \end{itemize}
@@ -124,13 +124,100 @@ Min. 99.9 \%ile flow completion time \\
 
 \begin{frame}[plain]
 \frametitle{Quantifying ``No Silver Bullet''}
+
 \only<1>{ \noindent \begin{figure}[ht]\includegraphics[width=\columnwidth]{fig-6.pdf}\end{figure}}
-\only<2>{ \noindent \begin{figure}[ht]\includegraphics[width=\columnwidth]{fig-5.pdf}\end{figure}}
-\only<3>{ \noindent \begin{figure}[ht]\includegraphics[width=\columnwidth]{fig-4.pdf}\end{figure}}
-\only<4>{ \noindent \begin{figure}[ht]\includegraphics[width=\columnwidth]{fig-3.pdf}\end{figure}}
-\only<5>{ \noindent \begin{figure}[ht]\includegraphics[width=\columnwidth]{fig-2.pdf}\end{figure}}
-\only<6>{ \noindent \begin{figure}[ht]\includegraphics[width=\columnwidth]{fig-1.pdf}\end{figure}}
-\only<7>{ \noindent \begin{figure}[ht]\includegraphics[width=\columnwidth]{fig.pdf}\end{figure}}
+
+\only<2>{
+  \begin{center}
+  \begin{tabular}{| p{2.3cm} |p{3.5cm}| p{2.1cm}| }
+  \hline
+  Nwk config. & Avg. throughput, delay & Power\\
+  \hline
+  Bufferbloat+FQ  & 7.47 Mbps, 62165 ms & \cellcolor{red!20} 0.12 $Mbit/s^{2}$ \\
+  \hline
+  CoDel+FQ & 6.55 Mbps, 76.5 ms  & \cellcolor{green!20} 85.6 $Mbit/s^{2}$\\
+  \hline
+  \end{tabular}
+  \end{center}
+}
+\only<3>{ \noindent \begin{figure}[ht]\includegraphics[width=\columnwidth]{fig-5.pdf}\end{figure}}
+
+\only<4>{
+  \begin{center}
+  \begin{tabular}{| p{2.5cm} |p{2.5cm} | p{2cm} | }
+  \hline
+  Nwk config. & Bulk Throughput & Web Tail FCT\\
+  \hline
+  Bufferbloat+FQ & \cellcolor{green!20} 11.22 Mbps & \cellcolor{green!20} 20.94 secs \\
+  \hline
+  CoDel+FQ & \cellcolor{red!20} 3.92 Mbps & \cellcolor{red!20} 43.72 secs \\
+  \hline
+  \end{tabular}
+  \end{center}
+}
+\only<5>{ \noindent \begin{figure}[ht]\includegraphics[width=\columnwidth]{fig-4.pdf}\end{figure}}
+
+\only<6>{
+  \begin{center}
+  \begin{tabular}{| p{2cm} |p{4cm} | }
+  \hline
+  Nwk config. & Avg. throughput \\
+  \hline
+  CoDel+FCFS & \cellcolor{green!20} 2.00 Mbps \\
+  \hline
+  CoDel+FQ & \cellcolor{red!20} 1.90 Mbps \\
+  \hline
+  \end{tabular}
+  \end{center}
+}
+\only<7>{ \noindent \begin{figure}[ht]\includegraphics[width=\columnwidth]{fig-3.pdf}\end{figure}}
+
+\only<8>{
+  \begin{center}
+  \begin{tabular}{| p{2cm} |p{2.5cm} | p{4cm} | }
+  \hline
+  Nwk config. & Bulk Throughput & Web Tail FCT  \\
+  \hline
+  CoDel+FCFS & 9.48 Mbps & \cellcolor{red!20} 22.25 secs \\
+  \hline
+  CoDel+FQ & 9.48 Mbps & \cellcolor{green!20} 18.71 secs \\
+  \hline
+  \end{tabular}
+  \end{center}
+}
+\only<9>{ \noindent \begin{figure}[ht]\includegraphics[width=\columnwidth]{fig-2.pdf}\end{figure}}
+
+\only<10>{
+  \begin{center}
+  \begin{tabular}{| p{3.0cm} |p{3.0cm} |  }
+  \hline
+  Nwk config. & Bulk throughput  \\
+  \hline
+  Bufferbloat+FQ & \cellcolor{green!20} 11.96 Mbps \\
+  \hline
+  CoDel+FCFS & \cellcolor{red!20} 4.35 Mbps \\
+  \hline
+  \end{tabular}
+  \end{center}
+}
+\only<11>{ \noindent \begin{figure}[ht]\includegraphics[width=\columnwidth]{fig-1.pdf}\end{figure}}
+
+\only<12>{
+  \begin{center}
+  \begin{tabular}{| p{2.2cm} |p{4.2cm} |p{2.2cm}| }
+  \hline
+  Nwk config. & Interactive throughput, delay & Power\\
+  \hline
+  Bufferbloat+FQ & 11.96 Mbps, 46028~ms & \cellcolor{red!20} 0.26 $Mbit/s^{2}$\\
+  \hline
+  CoDel+FCFS & 4.35 Mbps, 83.2~ms & \cellcolor{green!20}52.28 $Mbit/s^{2}$ \\
+  \hline
+  \end{tabular}
+  \end{center}
+}
+\only<13>{ \noindent \begin{figure}[ht]\includegraphics[width=\columnwidth]{fig.pdf}\end{figure}}
+
+
 \end{frame}
 
 \begin{frame}[plain]
@@ -222,12 +309,13 @@ Architect a flexible data plane
 %\end{center}
 \begin{center}
 Synthesis numbers on Xilinx Kintex-7: \\
-\begin{tabular}{lll}
-\bf Resource & \bf Usage & \bf Fraction of FPGA \\
+\begin{tabular}{p{0.32 \columnwidth} p{0.32 \columnwidth} p{0.32 \columnwidth}}
+\bf Resource & \bf Usage & \bf Fraction \\
 \hline Slice logic & 1,256 & 1\% \\
 Slice logic dist. & 1,975 & 2\% \\
 IO/GTX ports & 27 & 2\% \\
 DSP slices & 0 & 0\% \\
+%TODO: Fix this.
 Maximum speed & 12.9 $\times 10^6$ pkts/s \url{~ 10 gbps} \\
 \end{tabular}
 \end{center}
