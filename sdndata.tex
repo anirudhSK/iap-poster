@@ -3,25 +3,31 @@
 \frametitle{Switch Data Planes today}
 Two key decisions on a per-packet basis:
 \begin{itemize}
+\item[]
 \item Scheduling: Which packet to transmit next?
 \item[]
 \item Queue Management: How long can queues grow? Which packet to drop?
-\item[]
 \end{itemize}
 \end{frame}
 
 \begin{frame}[plain]
+\frametitle{The long lineage of in-network algorithms}
+%\only<1>{\noindent \hspace{-.75 cm} \includegraphics[width=1.0\textwidth]{march-5.pdf}}
+\only<1>{\noindent \hspace{-.75 cm} \includegraphics[width=1.0\textwidth]{march-4.pdf}}
+\only<2>{\noindent \hspace{-.75 cm} \includegraphics[width=1.0\textwidth]{march-3.pdf}}
+\only<3>{\noindent \hspace{-.75 cm} \includegraphics[width=1.0\textwidth]{march-2.pdf}}
+\only<4>{\noindent \hspace{-.75 cm} \includegraphics[width=1.0\textwidth]{march-1.pdf}}
+\only<5>{\noindent \hspace{-.75 cm} \includegraphics[width=1.0\textwidth]{march.pdf}}
+\end{frame}
+
+
+\begin{frame}[plain]
 \frametitle{The Data Plane is continuously evolving}
 \begin{itemize}
-\item The long lineage of in-network algorithms:
-\noindent \hspace{-.75 cm} \includegraphics[width=.9\textwidth]{march.png}
-\vspace{-2cm}
 \item[]
 \item Each scheme wins in its own evaluation.
 \item[]
 \item Some believe in a ``silver bullet'' knobless in-network method.
-\item[]
-
 \end{itemize}
 \end{frame}
 
@@ -206,12 +212,13 @@ Architect a flexible data plane
 \begin{frame}[plain]
 \frametitle{Controlled flexibility: Want performance, security}
 
-(Or, why this isn't the same as ``active networks'')
+% Mention previous talk here.
+%(Or, why this isn't the same as ``active networks'')
 
 \begin{itemize}
 \item Provide interfaces only to the head and tail of queues
 \item Operators specify only queue-management/scheduling logic
-\item No access to packet payloads (for now)
+\item No access to packet payloads.
 \end{itemize}
 \end{frame}
 
@@ -269,6 +276,27 @@ Maximum speed & 12.9 $\times 10^6$ pkts/s \url{~ 10 gbps} \\
 \end{frame}
 
 \begin{frame}[plain]
+\frametitle{Limitations and Practical Considerations:}
+\begin{itemize}
+\item Cannot express several network functions that need payloads.
+\item How do applications signal objectives to the network?
+\item Feasibility at 10G on high port-density  switches.
+\item Energy and Area overheads.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{Related Work:}
+\begin{itemize}
+\item Active Networking, e.g., ANTS
+\item []
+\item Software Routers, e.g., Click
+\item []
+\item Software-Defined Networking, e.g., OpenFlow
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
 
 \frametitle{Conclusion}
 \begin{itemize}
@@ -287,16 +315,5 @@ Maximum speed & 12.9 $\times 10^6$ pkts/s \url{~ 10 gbps} \\
 
 
 %% Backup slides 
-\begin{frame}[plain]
-\frametitle{Limitations and Practical Considerations:}
-\begin{itemize}
-\item Cannot express several network functions that need payloads.
-\item How do applications signal objectives to the network?
-\item Feasibility at 10G on high port-density  switches.
-\item Mechanism to map flows onto per-port queues.
-\item Energy and Area overheads.
-\end{itemize}
-\end{frame}
-
 
 \end{Large}
