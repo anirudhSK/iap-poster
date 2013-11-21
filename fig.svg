@@ -607,7 +607,7 @@
      inkscape:groupmode="layer"
      id="layer9"
      inkscape:label="Base"
-     style="display:none">
+     style="display:inline">
     <path
        transform="matrix(0.67714285,0,0,0.70754716,101.9276,-84.936419)"
        d="m 495.21739,159.21739 a 129.34782,39.173912 0 1 1 -258.69565,0 129.34782,39.173912 0 1 1 258.69565,0 z"
@@ -1192,7 +1192,7 @@
      inkscape:groupmode="layer"
      id="layer8"
      inkscape:label="bfq&gt;cfq"
-     style="display:none">
+     style="display:inline">
     <path
        transform="translate(-11.022087,-138.79678)"
        sodipodi:nodetypes="csc"
@@ -1293,7 +1293,7 @@
      inkscape:groupmode="layer"
      id="layer6"
      inkscape:label="cfq&gt;cfs"
-     style="display:none">
+     style="display:inline">
     <path
        transform="translate(-11.022087,-138.79678)"
        sodipodi:nodetypes="csc"
@@ -1351,7 +1351,7 @@
      inkscape:groupmode="layer"
      id="layer5"
      inkscape:label="cfs&gt;cfq"
-     style="display:none">
+     style="display:inline">
     <path
        transform="translate(-11.022087,-138.79678)"
        sodipodi:nodetypes="ccc"
@@ -1395,7 +1395,7 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="cfs&gt;bfq"
-     style="display:none">
+     style="display:inline">
     <path
        sodipodi:nodetypes="csc"
        transform="translate(-11.022087,-76.43478)"
@@ -1444,7 +1444,7 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="bfq&gt;cfs"
-     style="display:none">
+     style="display:inline">
     <path
        transform="translate(-11.022087,-138.79678)"
        sodipodi:nodetypes="csc"
