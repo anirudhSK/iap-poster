@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="fig.svg">
+   sodipodi:docname="fig.pdf">
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -24,10 +24,10 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.3529412"
      inkscape:cx="365.00651"
-     inkscape:cy="202.24363"
+     inkscape:cy="130.49998"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     showgrid="true"
+     inkscape:current-layer="g10240"
+     showgrid="false"
      units="in"
      inkscape:window-width="1600"
      inkscape:window-height="824"
@@ -37,11 +37,7 @@
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0">
-    <inkscape:grid
-       type="xygrid"
-       id="grid3167" />
-  </sodipodi:namedview>
+     fit-margin-bottom="0" />
   <defs
      id="defs4">
     <marker
@@ -583,34 +579,6 @@
          id="path11034"
          inkscape:connector-curvature="0" />
     </marker>
-    <marker
-       style="overflow:visible"
-       id="Arrow2LendL-0"
-       refX="0"
-       refY="0"
-       orient="auto"
-       inkscape:stockid="Arrow2LendL">
-      <path
-         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
-         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         style="fill:#0000ff;fill-rule:evenodd;stroke:#0000ff;stroke-width:0.625;stroke-linejoin:round"
-         id="path10675-5"
-         inkscape:connector-curvature="0" />
-    </marker>
-    <marker
-       style="overflow:visible"
-       id="Arrow2LendQL-9"
-       refX="0"
-       refY="0"
-       orient="auto"
-       inkscape:stockid="Arrow2LendQL">
-      <path
-         transform="matrix(-1.1,0,0,-1.1,-1.1,0)"
-         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
-         style="fill:#0000ff;fill-rule:evenodd;stroke:#0000ff;stroke-width:0.625;stroke-linejoin:round"
-         id="path10681-1"
-         inkscape:connector-curvature="0" />
-    </marker>
   </defs>
   <metadata
      id="metadata7">
@@ -620,7 +588,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -701,7 +669,7 @@
        inkscape:connector-curvature="0"
        id="path3856"
        d="m 474.52174,120.04348 c 0,0 62.85664,18.9386 97.56522,69.47826 29.06523,42.32229 44.34783,130.82609 44.34783,130.82609"
-       style="fill:none;stroke:#0000ff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow2LendL);marker-mid:none;marker-end:url(#Arrow2LendQL)" />
+       style="fill:none;stroke:#0000ff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow2LendL);marker-mid:url(#Arrow2LendU);marker-end:url(#Arrow2LendQL)" />
     <path
        sodipodi:nodetypes="ccc"
        inkscape:connector-curvature="0"
@@ -713,13 +681,13 @@
        inkscape:connector-curvature="0"
        id="path3856-4-6-2"
        d="m 522.96099,368.18466 c 0,0 -65.38479,-42.13378 -84.26088,-70.2174 -12.05626,-17.93715 -42.86957,-96.82609 -42.86957,-96.82609"
-       style="fill:none;stroke:#007b34;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow2Lend2);marker-mid:none;marker-end:url(#Arrow2Lend1)" />
+       style="fill:none;stroke:#007b34;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow2Lend2);marker-mid:url(#Arrow2Lendq);marker-end:url(#Arrow2Lend1)" />
     <path
        sodipodi:nodetypes="csc"
        inkscape:connector-curvature="0"
        id="path3856-4-0"
-       d="m 521.85994,461.54069 c 0,0 -44.39435,34.57966 -179.79762,39.91676 -96.08349,3.78726 -147.24165,-56.67193 -147.24165,-56.67193"
-       style="fill:none;stroke:#0000ff;stroke-width:1.6339277;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow2LendQ);marker-mid:url(#Arrow2LendV);marker-end:url(#Arrow2LendF)" />
+       d="m 521.69828,470.76022 c 0,0 -44.3477,51.86466 -179.6087,59.86956 -95.98254,5.68036 -147.08695,-84.99999 -147.08695,-84.99999"
+       style="fill:none;stroke:#0000ff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow2LendQ);marker-mid:url(#Arrow2LendV);marker-end:url(#Arrow2LendF)" />
     <path
        sodipodi:nodetypes="csc"
        inkscape:connector-curvature="0"
@@ -727,65 +695,128 @@
        d="m 503.65596,407.56999 c -46.64539,-26.78584 -98.08888,-34.74017 -159.9627,-34.73061 -36.51918,0.006 -62.41498,14.11454 -103.90687,34.73061"
        style="fill:none;stroke:#007b34;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow2Lstartd);marker-mid:none;marker-end:url(#Arrow2LstartJ)" />
     <rect
-       transform="matrix(0.9999915,-0.00412216,0.0141394,0.99990003,0,0)"
-       y="292.62997"
-       x="159.71251"
-       height="24.450193"
-       width="137.60721"
+       transform="matrix(0.99996581,-0.00826912,0.00704884,0.99997516,0,0)"
+       y="299.02142"
+       x="132.27452"
+       height="56.912804"
+       width="159.68594"
        id="rect6595"
-       style="fill:#ffffff;fill-opacity:1;stroke:#007b34;stroke-width:1.21689618;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+       style="fill:#ffffff;fill-opacity:1;stroke:#007b34;stroke-width:2.00000072;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
     <text
        sodipodi:linespacing="100%"
        id="text6571"
-       y="311.33255"
-       x="168.65009"
+       y="315.93747"
+       x="138.75148"
        style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
        xml:space="preserve"
        transform="matrix(0.99997086,-0.00763464,0.00763464,0.99997086,0,0)"><tspan
-         id="tspan6589"
-         y="311.33255"
-         x="168.65009"
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;font-family:cmr10;-inkscape-font-specification:cmr10">Two <tspan
+         y="315.93747"
+         x="138.75148"
+         id="tspan6573"
+         sodipodi:role="line">Two <tspan
    id="tspan6575"
-   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold">Bulk</tspan> on LTE.</tspan></text>
-    <rect
-       y="364.99408"
-       x="245.4157"
-       height="22.040707"
-       width="232.59705"
-       id="rect6674-1"
-       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#007b34;stroke-width:1.57041752;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
-    <text
-       sodipodi:linespacing="100%"
-       id="text6664-5"
-       y="380.03589"
-       x="251.02208"
-       style="font-size:13.67738533px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10 Bold"
-       xml:space="preserve"><tspan
-         style="font-size:15px"
-         y="380.03589"
-         x="251.02208"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold">Bulk</tspan> on LTE.</tspan><tspan
+         id="tspan6587"
+         y="331.36423"
+         x="138.75148"
+         sodipodi:role="line">Codel+FCFS gives</tspan><tspan
+         id="tspan6589"
+         y="346.68851"
+         x="138.75148"
          sodipodi:role="line"
-         id="tspan9823"><tspan
-   id="tspan6676-2"
-   style="font-size:15px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:cmr10;-inkscape-font-specification:cmr10 Bold"><tspan
-     style="font-weight:normal;-inkscape-font-specification:cmr10"
-     id="tspan7964">Two</tspan></tspan><tspan
-   id="tspan9806"
-   style="font-size:15px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold">Interactive </tspan><tspan
-   style="font-weight:normal;-inkscape-font-specification:cmr10"
-   id="tspan7962"> on 15 Mbps link</tspan>.</tspan></text>
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ff0000;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial Bold">5% more throughput</tspan></text>
+    <path
+       sodipodi:nodetypes="csc"
+       inkscape:connector-curvature="0"
+       id="path3856-4"
+       d="m 265.26489,167.58314 c 0,0 -124.94359,11.5473 -159.65217,62.08696 -29.065234,42.32229 -10.347838,141.17391 -10.347838,141.17391"
+       style="fill:none;stroke:#0000ff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow2Lstarty);marker-mid:url(#Arrow2Lstartu);marker-end:url(#Arrow2LstartH)" />
     <g
-       transform="translate(63.739509,-170.56519)"
+       transform="matrix(0.99996459,-0.00841566,0.00841566,0.99996459,-316.38974,-487.84477)"
+       id="g6756">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:1.99999988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect6674-9"
+         width="228.3748"
+         height="73.174042"
+         x="322.4769"
+         y="688.2702"
+         transform="matrix(0.99999998,2.1729543e-4,2.2305416e-4,0.99999998,0,0)" />
+      <text
+         xml:space="preserve"
+         style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
+         x="328.54343"
+         y="705.34021"
+         id="text6664-8"
+         sodipodi:linespacing="100%"><tspan
+           sodipodi:role="line"
+           id="tspan6666-0"
+           x="328.54343"
+           y="705.34021"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold"
+   id="tspan6676-9">Bulk</tspan> + <tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold"
+   id="tspan6678-0">Web</tspan>, 15 Mbps link.</tspan><tspan
+           sodipodi:role="line"
+           x="328.54343"
+           y="721.09125"
+           id="tspan6668-8">Codel+FQ gives <tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold"
+   id="tspan6680-6">Web</tspan> flow</tspan><tspan
+           sodipodi:role="line"
+           x="328.54343"
+           y="736.84229"
+           id="tspan6670-0"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ff0000;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial Bold">16% faster tail flow completion</tspan><tspan
+           sodipodi:role="line"
+           x="328.54343"
+           y="751.84229"
+           id="tspan6672-0">with same <tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold"
+   id="tspan6682-5">Bulk</tspan> throughput</tspan></text>
+    </g>
+    <g
+       id="g9877"
+       transform="matrix(0.91182571,0,0,0.91182571,27.777584,-110.14489)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#007b34;stroke-width:2.1934011;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect6674-1"
+         width="250.56523"
+         height="39.913036"
+         x="240.58696"
+         y="520.55768" />
+      <text
+         xml:space="preserve"
+         style="font-size:15px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10 Bold"
+         x="246.49992"
+         y="536.81848"
+         id="text6664-5"
+         sodipodi:linespacing="100%"><tspan
+           id="tspan9831"
+           sodipodi:role="line"
+           x="246.49992"
+           y="536.81848"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:cmr10;-inkscape-font-specification:cmr10 Bold"
+   id="tspan6676-2">Two </tspan><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold"
+   id="tspan9806">Interactive </tspan>on 15 Mbps link.</tspan><tspan
+           id="tspan9823"
+           sodipodi:role="line"
+           x="246.49992"
+           y="552.56952">Codel+FQ gives <tspan
+   id="tspan9867"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ff0000;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial Bold">700x more power</tspan></tspan></text>
+    </g>
+    <g
+       transform="translate(-14.043478,-172.2174)"
        id="g10240">
       <rect
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:0.97821599;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:1.99999976;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
          id="rect6674-6"
-         width="158.45653"
-         height="26.89134"
-         x="220.85864"
-         y="653.09027" />
+         width="308.95648"
+         height="57.652164"
+         x="221.36954"
+         y="653.60114" />
       <text
          xml:space="preserve"
          style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
@@ -796,95 +827,102 @@
            sodipodi:role="line"
            x="227.28258"
            y="670.60107"
-           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;font-family:cmr10;-inkscape-font-specification:cmr10"
-           id="tspan10204"><tspan
+           id="tspan6668-9"><tspan
    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold"
    id="tspan6676-1">Bulk</tspan> + <tspan
    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold"
-   id="tspan6678-9">Web</tspan> on LTE. </tspan></text>
+   id="tspan6678-9">Web</tspan> on LTE. Bufferbloat+FQ gives</tspan><tspan
+           sodipodi:role="line"
+           x="227.28258"
+           y="686.35211"
+           id="tspan10210"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold"
+   id="tspan10228">Web</tspan> flow: <tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ff0000;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial Bold"
+   id="tspan10222">52% faster tail flow completion</tspan>,</tspan><tspan
+           sodipodi:role="line"
+           x="227.28258"
+           y="702.10315"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ff0000;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial Bold"
+           id="tspan10204"><tspan
+   id="tspan10216"
+   style="font-weight:normal;fill:#000000;font-family:cmr10;-inkscape-font-specification:cmr10"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold"
+   id="tspan10170">Bulk</tspan> flow: </tspan>186% more throughput</tspan></text>
     </g>
-    <rect
-       y="235.56427"
-       x="469.11572"
-       height="20.073778"
-       width="170.11726"
-       id="rect6674-0"
-       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:1.14360607;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
-    <text
-       sodipodi:linespacing="100%"
-       id="text6664-33"
-       y="250.03589"
-       x="471.02209"
-       style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       xml:space="preserve"><tspan
-         id="tspan6668-5"
-         y="250.03589"
-         x="471.02209"
-         sodipodi:role="line"><tspan
-   id="tspan10578"
-   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:cmr10;-inkscape-font-specification:cmr10 Bold">One </tspan><tspan
-   id="tspan6676-29"
-   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold">Interactive </tspan>on LTE.</tspan><tspan
-         y="265.78693"
-         x="471.02209"
-         sodipodi:role="line"
-         id="tspan10593"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ff0000;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial Bold" /></text>
-    <rect
-       y="292.59229"
-       x="384.66544"
-       height="23.800379"
-       width="132.45258"
-       id="rect6674-0-6"
-       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#007b34;stroke-width:1.11265743;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
-    <text
-       sodipodi:linespacing="100%"
-       id="text6664-33-5"
-       y="310.03589"
-       x="391.02209"
-       style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       xml:space="preserve"><tspan
-         y="310.03589"
-         x="391.02209"
-         sodipodi:role="line"
-         id="tspan10593-9"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;font-family:cmr10;-inkscape-font-specification:cmr10"><tspan
+    <g
+       id="g10595"
+       transform="translate(235.78261,-527.73913)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:1.99999988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+         id="rect6674-0"
+         width="178.86958"
+         height="58.391296"
+         x="283.45654"
+         y="730.4707" />
+      <text
+         xml:space="preserve"
+         style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
+         x="289.36951"
+         y="747.47064"
+         id="text6664-33"
+         sodipodi:linespacing="100%"><tspan
+           sodipodi:role="line"
+           x="289.36951"
+           y="747.47064"
+           id="tspan6668-5"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:cmr10;-inkscape-font-specification:cmr10 Bold"
+   id="tspan10578">One </tspan><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold"
+   id="tspan6676-29">Interactive </tspan>on LTE.</tspan><tspan
+           sodipodi:role="line"
+           x="289.36951"
+           y="762.8974"
+           id="tspan6672-7">Codel+FCFS gives</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ff0000;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial Bold"
+           id="tspan10593"
+           sodipodi:role="line"
+           x="289.36951"
+           y="778.22168">200x more power</tspan></text>
+    </g>
+    <g
+       id="g10595-1"
+       transform="translate(-116.41308,-145.6087)">
+      <g
+         transform="translate(223.95652,-307.47826)"
+         id="g10942">
+        <rect
+           y="730.4707"
+           x="283.45654"
+           height="58.391296"
+           width="174.4348"
+           id="rect6674-0-6"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#007b34;stroke-width:1.99999988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+        <text
+           sodipodi:linespacing="100%"
+           id="text6664-33-5"
+           y="747.47064"
+           x="289.36951"
+           style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
+           xml:space="preserve"><tspan
+             id="tspan6668-5-0"
+             y="747.47064"
+             x="289.36951"
+             sodipodi:role="line"><tspan
    id="tspan10578-4"
    style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:cmr10;-inkscape-font-specification:cmr10 Bold">One </tspan><tspan
    id="tspan6676-29-6"
-   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold">Bulk </tspan>on LTE.</tspan></text>
-    <path
-       sodipodi:nodetypes="csc"
-       inkscape:connector-curvature="0"
-       id="path3856-1"
-       d="m 264.77428,163.47098 c 0,0 -75.33035,19.21704 -116.92675,70.49983 -34.83312,42.94456 -53.148525,132.74963 -53.148525,132.74963"
-       style="fill:none;stroke:#0000ff;stroke-width:2.20550942;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow2LstartH);marker-mid:none;marker-end:url(#Arrow2LstartH)" />
-    <rect
-       y="234.16634"
-       x="49.196068"
-       height="21.391352"
-       width="207.65222"
-       id="rect6674-0-1"
-       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0000ff;stroke-width:1.3042928;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
-    <text
-       sodipodi:linespacing="100%"
-       id="text6664-33-3"
-       y="250.03589"
-       x="51.022087"
-       style="font-size:15px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10"
-       xml:space="preserve"><tspan
-         y="250.03589"
-         x="51.022087"
-         sodipodi:role="line"
-         id="tspan10593-2"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#000000;fill-opacity:1;font-family:cmr10;-inkscape-font-specification:cmr10 Bold"><tspan
-   style="font-family:Arial;-inkscape-font-specification:Arial"
-   id="tspan7816">B</tspan><tspan
-   style="font-weight:bold;font-family:Arial;-inkscape-font-specification:Arial"
-   id="tspan7808">ulk </tspan>+ <tspan
-   style="font-family:Arial;-inkscape-font-specification:Arial"
-   id="tspan7820">Web </tspan><tspan
-   style="font-weight:normal;-inkscape-font-specification:cmr10"
-   id="tspan7966"> on 15 Mbps link. </tspan></tspan></text>
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold">Bulk </tspan>on LTE.</tspan><tspan
+             id="tspan6672-7-2"
+             y="762.8974"
+             x="289.36951"
+             sodipodi:role="line">Bufferbloat+FQ gives</tspan><tspan
+             y="778.22168"
+             x="289.36951"
+             sodipodi:role="line"
+             id="tspan10593-9"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ff0000;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial Bold">174% more throughput</tspan></text>
+      </g>
+    </g>
   </g>
 </svg>
