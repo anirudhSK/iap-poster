@@ -24,10 +24,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.3529412"
-     inkscape:cx="309.11226"
+     inkscape:cx="331.45441"
      inkscape:cy="209.05925"
      inkscape:document-units="px"
-     inkscape:current-layer="layer12"
+     inkscape:current-layer="layer7"
      showgrid="true"
      units="in"
      inkscape:window-width="1600"
@@ -599,7 +599,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -607,7 +607,7 @@
      inkscape:groupmode="layer"
      id="layer9"
      inkscape:label="Base"
-     style="display:inline">
+     style="display:none">
     <path
        transform="matrix(0.67714285,0,0,0.70754716,101.9276,-84.936419)"
        d="m 495.21739,159.21739 a 129.34782,39.173912 0 1 1 -258.69565,0 129.34782,39.173912 0 1 1 258.69565,0 z"
@@ -759,7 +759,7 @@
      inkscape:label="ExperimentalSetup"
      style="display:none">
     <rect
-       style="fill:#b3b3b3;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:20, 5;stroke-dashoffset:0;display:inline"
+       style="fill:#0000ff;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:20, 5;stroke-dashoffset:0;display:inline"
        id="rect4800"
        width="475.4783"
        height="97.13044"
@@ -767,7 +767,7 @@
        y="82.978241" />
     <text
        xml:space="preserve"
-       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Ariel;-inkscape-font-specification:Ariel"
+       style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;display:inline;font-family:Ariel;-inkscape-font-specification:Ariel"
        x="110"
        y="111.23911"
        id="text4686"
@@ -794,13 +794,6 @@
      id="layer13"
      inkscape:label="ResultCFQ"
      style="display:none">
-    <rect
-       style="fill:#cccccc;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:20, 5;stroke-dashoffset:0;display:inline"
-       id="rect4700-8"
-       width="218.78262"
-       height="29.565216"
-       x="19.999985"
-       y="327.89127" />
     <text
        xml:space="preserve"
        style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Ariel;-inkscape-font-specification:Ariel"
@@ -816,13 +809,6 @@
          id="tspan4706-6"
          x="20"
          y="351.23911">Web Tail FCT: 43 s</tspan></text>
-    <rect
-       style="fill:#cccccc;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:20, 5;stroke-dashoffset:0;display:inline"
-       id="rect4700"
-       width="223.95653"
-       height="29.565216"
-       x="21.478256"
-       y="207.89128" />
     <text
        xml:space="preserve"
        style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Ariel;-inkscape-font-specification:Ariel"
@@ -833,18 +819,11 @@
          sodipodi:role="line"
          id="tspan4704"
          x="20"
-         y="201.23911"></tspan><tspan
+         y="201.23911" /><tspan
          sodipodi:role="line"
          id="tspan4706"
          x="20"
          y="231.23911">Bulk Tpt: 3.9 Mbps</tspan></text>
-    <rect
-       y="327.89127"
-       x="19.999985"
-       height="29.565216"
-       width="218.78262"
-       id="rect4974"
-       style="fill:#cccccc;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:20, 5;stroke-dashoffset:0;display:inline" />
     <text
        sodipodi:linespacing="125%"
        id="text4976"
@@ -860,13 +839,6 @@
          x="20"
          id="tspan4980"
          sodipodi:role="line">Web Tail FCT: 43 s</tspan></text>
-    <rect
-       y="207.89128"
-       x="21.478256"
-       height="29.565216"
-       width="223.95653"
-       id="rect4982"
-       style="fill:#cccccc;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:20, 5;stroke-dashoffset:0;display:inline" />
     <text
        sodipodi:linespacing="125%"
        id="text4984"
@@ -877,7 +849,7 @@
          y="201.23911"
          x="20"
          id="tspan4986"
-         sodipodi:role="line"></tspan><tspan
+         sodipodi:role="line" /><tspan
          y="231.23911"
          x="20"
          id="tspan4988"
@@ -899,14 +871,7 @@
            x="178.13043"
            y="89.326065"
            style="font-size:20px;font-family:Arial;-inkscape-font-specification:Arial" /></flowRegion><flowPara
-         id="flowPara4684"></flowPara></flowRoot>    <rect
-       style="fill:#cccccc;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:20, 5;stroke-dashoffset:0;display:inline"
-       id="rect4700-8-1"
-       width="218.78262"
-       height="29.565216"
-       x="440"
-       y="327.89127" />
-    <text
+         id="flowPara4684" /></flowRoot>    <text
        xml:space="preserve"
        style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Ariel;-inkscape-font-specification:Ariel"
        x="440"
@@ -921,13 +886,6 @@
          id="tspan4706-6-7"
          x="440"
          y="351.23911">Web Tail FCT: 21 s</tspan></text>
-    <rect
-       style="fill:#cccccc;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:20, 5;stroke-dashoffset:0;display:inline"
-       id="rect4700-9"
-       width="240.21741"
-       height="29.565216"
-       x="441.47827"
-       y="207.89128" />
     <text
        xml:space="preserve"
        style="font-size:24px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;display:inline;font-family:Ariel;-inkscape-font-specification:Ariel"
@@ -953,27 +911,13 @@
            height="56.173912"
            x="-36.95652"
            y="193.54346" /></flowRegion><flowPara
-         id="flowPara4884"></flowPara></flowRoot>    <use
-       x="0"
-       y="0"
-       xlink:href="#rect4700-9"
-       id="use4925"
-       width="688.08667"
-       height="401.23911" />
-    <use
+         id="flowPara4884" /></flowRoot>    <use
        x="0"
        y="0"
        xlink:href="#text4702-6"
        id="use4927"
        width="688.08667"
        height="401.23911" />
-    <rect
-       y="327.89127"
-       x="440"
-       height="29.565216"
-       width="218.78262"
-       id="rect4990"
-       style="fill:#cccccc;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:20, 5;stroke-dashoffset:0;display:inline" />
     <text
        sodipodi:linespacing="125%"
        id="text4992"
@@ -989,13 +933,6 @@
          x="440"
          id="tspan4996"
          sodipodi:role="line">Web Tail FCT: 21 s</tspan></text>
-    <rect
-       y="207.89128"
-       x="441.47827"
-       height="29.565216"
-       width="240.21741"
-       id="rect4998"
-       style="fill:#cccccc;stroke-width:5;stroke-miterlimit:4;stroke-dasharray:20, 5;stroke-dashoffset:0;display:inline" />
     <text
        sodipodi:linespacing="125%"
        id="text5000"
@@ -1011,13 +948,6 @@
          x="440"
          id="tspan5004"
          sodipodi:role="line">Bulk Tpt: 11.2 Mbps</tspan></text>
-    <use
-       height="401.23911"
-       width="688.08667"
-       id="use5006"
-       xlink:href="#rect4700-9"
-       y="0"
-       x="0" />
     <use
        height="401.23911"
        width="688.08667"
@@ -1319,47 +1249,45 @@
      inkscape:groupmode="layer"
      id="layer7"
      inkscape:label="cfq&gt;bfq"
-     style="display:none">
+     style="display:inline">
     <path
-       transform="translate(-11.022087,-138.79678)"
        sodipodi:nodetypes="csc"
        inkscape:connector-curvature="0"
        id="path3856-4-0-1"
-       d="m 503.65596,407.56999 c -46.64539,-26.78584 -98.08888,-34.74017 -159.9627,-34.73061 -36.51918,0.006 -62.41498,14.11454 -103.90687,34.73061"
-       style="fill:none;stroke:#007b34;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow2Lstartd);marker-mid:none;marker-end:url(#Arrow2LstartJ);display:inline" />
-    <g
-       style="display:inline"
-       id="g9877"
-       transform="matrix(0.91182571,0,0,0.91182571,16.755497,-248.94167)">
-      <rect
-         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#007b34;stroke-width:2.1934011;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-         id="rect6674-1"
-         width="250.56523"
-         height="39.913036"
-         x="240.58696"
-         y="520.55768" />
-      <text
-         xml:space="preserve"
-         style="font-size:15px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10 Bold"
-         x="246.49992"
-         y="536.81848"
-         id="text6664-5"
-         sodipodi:linespacing="100%"><tspan
-           id="tspan9831"
-           sodipodi:role="line"
-           x="246.49992"
-           y="536.81848"><tspan
-   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:cmr10;-inkscape-font-specification:cmr10 Bold"
-   id="tspan6676-2">Two </tspan><tspan
-   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold"
-   id="tspan9806">Interactive </tspan>on 15 Mbps link.</tspan><tspan
-           id="tspan9823"
-           sodipodi:role="line"
-           x="246.49992"
-           y="552.56952">Codel+FQ gives <tspan
-   id="tspan9867"
-   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ff0000;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial Bold">700x more power</tspan></tspan></text>
-    </g>
+       d="m 492.56776,266.30172 c -48.56169,-24.89235 -102.11859,-32.28439 -166.53433,-32.27551 -38.01947,0.006 -64.97912,13.11679 -108.17559,32.27551"
+       style="fill:none;stroke:#007b34;stroke-width:1.96721971;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker-start:url(#Arrow2Lstartd);marker-mid:none;marker-end:url(#Arrow2LstartJ);display:inline" />
+    <rect
+       y="226.42764"
+       x="226.84137"
+       height="36.362644"
+       width="235.83203"
+       id="rect6674-1"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#007b34;stroke-width:2.03109121;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+    <text
+       sodipodi:linespacing="100%"
+       id="text6664-5"
+       y="241.23911"
+       x="230"
+       style="font-size:13.67738533px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:100%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:cmr10;-inkscape-font-specification:cmr10 Bold"
+       xml:space="preserve"><tspan
+         y="241.23911"
+         x="230"
+         sodipodi:role="line"
+         id="tspan9831"><tspan
+   id="tspan6676-2"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:cmr10;-inkscape-font-specification:cmr10 Bold">Two </tspan><tspan
+   id="tspan9806"
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold">Interactive </tspan><tspan
+   id="tspan3472"
+   style="font-weight:normal;-inkscape-font-specification:cmr10">on 15 Mbps link</tspan>.</tspan><tspan
+         y="255.60132"
+         x="230"
+         sodipodi:role="line"
+         id="tspan9823"><tspan
+           id="tspan3474"
+           style="font-weight:normal;-inkscape-font-specification:cmr10">Codel+FQ gives </tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ff0000;fill-opacity:1;font-family:Arial;-inkscape-font-specification:Arial Bold"
+           id="tspan9867">700x more tpt/delay</tspan></tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -1509,7 +1437,7 @@
            id="tspan10593"
            sodipodi:role="line"
            x="289.36951"
-           y="778.22168">200x more power</tspan></text>
+           y="778.22168">200x more tpt/delay</tspan></text>
     </g>
   </g>
   <g
