@@ -184,7 +184,7 @@ Min.~99.9~\%ile flow completion time \\
 \begin{frame}[plain]
 \frametitle{Building such a data plane in four parts}
 \begin{itemize}
-\item Hardware gadgets
+\item<1-> Hardware gadgets
       \begin{itemize}
       \item Random number generators (RED, BLUE)
       \item Binary tree of comparators (pFabric, SRPT)
@@ -192,21 +192,21 @@ Min.~99.9~\%ile flow completion time \\
 %      \item EWMA estimators (RED, AVQ, CSFQ)
       \end{itemize}
 
-\item I/O interfaces
+\item<2-> I/O interfaces
       \begin{itemize}
       \item Drop/mark head/tail of queue
       \item Interrupts for enqueue/dequeue
       \item Rewrite packet fields
       \end{itemize}
 
-\item State maintenance
+\item<3-> State maintenance
       \begin{itemize}
       \item Per-flow (WFQ, DRR)
       \item Per-dst address (PF)
 %      \item For fastest flows alone (AFD)
       \end{itemize}
 
-\item A domain-specific instruction set
+\item<4-> A domain-specific instruction set
       \begin{itemize}
       \item Expresses control flow
       \item Implements new functions unavailable in hardware
@@ -250,16 +250,16 @@ Maximum speed & 12.9 million pkts/s \url{~}10 Gbps \\
 \end{itemize}
 \end{frame}
 
-\begin{frame}[plain]
-\frametitle{Related Work}
-\begin{itemize}
-\item Active Networking, e.g., ANTS
-\item []
-\item Software Routers, e.g., Click
-\item []
-\item Software-Defined Networking, e.g., OpenFlow
-\end{itemize}
-\end{frame}
+%%\begin{frame}[plain]
+%%\frametitle{Related Work}
+%%\begin{itemize}
+%%\item Active Networking, e.g., ANTS
+%%\item []
+%%\item Software Routers, e.g., Click
+%%\item []
+%%\item Software-Defined Networking, e.g., OpenFlow
+%%\end{itemize}
+%%\end{frame}
 
 \begin{frame}[plain]
 
